@@ -1664,68 +1664,67 @@ function ofSubmit() {
   if (phone.length !== 10) { alert('Please enter a valid 10-digit phone number.'); return; }
   if (pin.length   !== 6)  { alert('Please enter a valid 6-digit pincode.'); return; }
   if ((paymode === 'UPI' || paymode === 'Bank Transfer') && !txn) {
-	alert('Please enter your Payment Transaction ID.'); return;
-	}
+    alert('Please enter your Payment Transaction ID.'); return;
+  }
 
-	const price = OF_PRICES[product] || 0;
-	const total = price * parseInt(qty);
+  const price = OF_PRICES[product] || 0;
+  const total = price * parseInt(qty);
 
-	// ════════════════════════════════════════════════════════════════════
-	// AUTO-SAVE TO GOOGLE SHEETS — HOW IT WORKS:
-	//
-	//   This form silently POSTs to your Google Form's backend (formResponse URL).
-	//   Google Forms automatically writes every submission into Google Sheets.
-	//   Zero server needed. Fully automatic.
-	//
-	// ONE-TIME SETUP (5 minutes):
-	//
-	//   STEP A — Get your formResponse URL:
-	//     1. Open your Google Form in edit mode
-	//     2. Click the Preview eye icon (top right)
-	//     3. Copy the browser URL → it looks like:
-	//        https://docs.google.com/forms/d/e/XXXXXX.../viewform
-	//     4. Change "viewform" → "formResponse"
-	//     5. Paste that URL as GFORM_URL below
+  // ════════════════════════════════════════════════════════════════════
+  // AUTO-SAVE TO GOOGLE SHEETS — HOW IT WORKS:
+  //
+  //   This form silently POSTs to your Google Form's backend (formResponse URL).
+  //   Google Forms automatically writes every submission into Google Sheets.
+  //   Zero server needed. Fully automatic.
+  //
+  // ONE-TIME SETUP (5 minutes):
+  //
+  //   STEP A — Get your formResponse URL:
+  //     1. Open your Google Form in edit mode
+  //     2. Click the Preview eye icon (top right)
+  //     3. Copy the browser URL → it looks like:
+  //        https://docs.google.com/forms/d/e/XXXXXX.../viewform
+  //     4. Change "viewform" → "formResponse"
+  //     5. Paste that URL as GFORM_URL below
+  //
+  //   STEP B — Get Entry IDs for each question:
+  //     1. On the Preview page, press F12 (Inspect)
+  //     2. Press Ctrl+F, search: entry.
+  //     3. Each question has: name="entry.123456789"
+  //     4. Match each entry ID to the right field below
+  //     5. Uncomment the params.append lines
+  //
+  //   STEP C — Save HTML and re-upload to Netlify. Done!
+  //     Every order = auto row in Google Sheets = email alert fires.
+  // ════════════════════════════════════════════════════════════════════
 
-	//
-	//   STEP B — Get Entry IDs for each question:
-	//     1. On the Preview page, press F12 (Inspect)
-	//     2. Press Ctrl+F, search: entry.
-	//     3. Each question has: name="entry.123456789"
-	//     4. Match each entry ID to the right field below
-	//     5. Uncomment the params.append lines
-	//
-	//   STEP C — Save HTML and re-upload to Netlify. Done!
-	//     Every order = auto row in Google Sheets = email alert fires.
-	// ════════════════════════════════════════════════════════════════════
+  const GFORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLScGu2d-zPsTodCbP5G4u13zTAaJdhV0CnTsQYBnz-XrPw0EHg/formResponse';
 
-	const GFORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLScGu2d-zPsTodCbP5G4u13zTAaJdhV0CnTsQYBnz-XrPw0EHg/viewform?usp=sharing&ouid=117031968670734006713';
+  const params = new URLSearchParams();
+  // params.append('entry.XXXXXXXXX', name);      // Customer Name
+  // params.append('entry.XXXXXXXXX', phone);     // Phone Number
+  // params.append('entry.XXXXXXXXX', city);      // City
+  // params.append('entry.XXXXXXXXX', address);   // Full Address
+  // params.append('entry.XXXXXXXXX', pin);       // Pincode
+  // params.append('entry.XXXXXXXXX', product);   // Product
+  // params.append('entry.XXXXXXXXX', qty);       // Quantity
+  // params.append('entry.XXXXXXXXX', paymode);   // Payment Mode
+  // params.append('entry.XXXXXXXXX', note);      // Special Instructions
+  // params.append('entry.XXXXXXXXX', txn);       // Payment Transaction ID
 
-	const params = new URLSearchParams();
-	 params.append('entry.XXXXXXXXX', name);      // Customer Name
-	 params.append('entry.XXXXXXXXX', phone);     // Phone Number
-	 params.append('entry.XXXXXXXXX', city);      // City
-	 params.append('entry.XXXXXXXXX', address);   // Full Address
-	 params.append('entry.XXXXXXXXX', pin);       // Pincode
-	 params.append('entry.XXXXXXXXX', product);   // Product
-	 params.append('entry.XXXXXXXXX', qty);       // Quantity
-	 params.append('entry.XXXXXXXXX', paymode);   // Payment Mode
-	 params.append('entry.XXXXXXXXX', note);      // Special Instructions
-	 params.append('entry.XXXXXXXXX', txn);       // Payment Transaction ID
+  // Silent background POST — no-cors means no popup, Google Sheets still gets it
+  fetch(GFORM_URL + '?' + params.toString(), { method: 'POST', mode: 'no-cors' })
+    .catch(() => {}); // Fail silently — submission still goes through
 
-	// Silent background POST — no-cors means no popup, Google Sheets still gets it
-	fetch(GFORM_URL + '?' + params.toString(), { method: 'POST', mode: 'no-cors' })
-	.catch(() => {}); // Fail silently — submission still goes through
-
-	// Show Thank You screen
-	document.getElementById('order-form-body').style.display = 'none';
-	const ty = document.getElementById('order-thankyou');
-	ty.style.display = 'block';
-	const ref = 'MC-' + String(Date.now()).slice(-4);
-	document.getElementById('ty-ref-num').textContent =
-	'Reference: ' + ref + '  |  ₹' + total.toLocaleString('en-IN') + ' via ' + paymode;
-	ty.scrollIntoView({ behavior: 'smooth', block: 'center' });
-	}
+  // Show Thank You screen
+  document.getElementById('order-form-body').style.display = 'none';
+  const ty = document.getElementById('order-thankyou');
+  ty.style.display = 'block';
+  const ref = 'MC-' + String(Date.now()).slice(-4);
+  document.getElementById('ty-ref-num').textContent =
+    'Reference: ' + ref + '  |  ₹' + total.toLocaleString('en-IN') + ' via ' + paymode;
+  ty.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
 
 </script>
 </body>
