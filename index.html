@@ -1701,18 +1701,17 @@ function ofSubmit() {
   const GFORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLScGu2d-zPsTodCbP5G4u13zTAaJdhV0CnTsQYBnz-XrPw0EHg/formResponse';
 
   const params = new URLSearchParams();
-   params.append('entry.XXXXXXXXX', name);      // Customer Name
-   params.append('entry.XXXXXXXXX', phone);     // Phone Number
-   params.append('entry.XXXXXXXXX', city);      // City
-   params.append('entry.XXXXXXXXX', address);   // Full Address
-   params.append('entry.XXXXXXXXX', pin);       // Pincode
-   params.append('entry.XXXXXXXXX', product);   // Product
-   params.append('entry.XXXXXXXXX', qty);       // Quantity
-   params.append('entry.XXXXXXXXX', paymode);   // Payment Mode
-   params.append('entry.XXXXXXXXX', note);      // Special Instructions
-   params.append('entry.XXXXXXXXX', txn);       // Payment Transaction ID
+  params.append('entry.924321959',  name);     // Customer Name
+  params.append('entry.605713129',  phone);    // Phone Number
+  params.append('entry.365684854',  city);     // City
+  params.append('entry.645250027',  address);  // Full Address
+  params.append('entry.289534555',  pin);      // Pincode
+  params.append('entry.713407889',  product);  // Product
+  params.append('entry.562161958',  qty);      // Quantity
+  params.append('entry.1897054533', paymode);  // Payment Mode
+  params.append('entry.1708475970', note);     // Special Instructions
 
-  // Silent background POST — no-cors means no popup, Google Sheets still gets it
+  // Silent POST to Google Forms → auto-saves to Google Sheets
   fetch(GFORM_URL + '?' + params.toString(), { method: 'POST', mode: 'no-cors' })
     .catch(() => {}); // Fail silently — submission still goes through
 
