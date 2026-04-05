@@ -1506,7 +1506,7 @@ body.lang-ta span[data-en] { display: none; }
             <div class="contact-item-text">
               <div class="contact-item-label">Email</div>
               <div class="contact-item-val">
-                <a href="/cdn-cgi/l/email-protection#aec3cfc0cfc380cddccfc8daddeec9c3cfc7c280cdc1c3"><span class="__cf_email__" data-cfemail="3c515d525d51125f4e5d5a484f7c5b515d5550125f5351">[email&#160;protected]</span></a>
+                <a href="mailto:manam.crafts@gmail.com">manam.crafts@gmail.com</a>
               </div>
             </div>
           </div>
@@ -1559,9 +1559,9 @@ body.lang-ta span[data-en] { display: none; }
   <div style="margin-bottom:8px">
     <a href="https://wa.me/919894122166">WhatsApp</a> &nbsp;·&nbsp;
     <a href="https://instagram.com/manam.crafts">@manam.crafts</a> &nbsp;·&nbsp;
-    <a href="/cdn-cgi/l/email-protection#f39e929d929edd908192958780b3949e929a9fdd909c9e"><span class="__cf_email__" data-cfemail="ea878b848b87c489988b8c9e99aa8d878b8386c4898587">[email&#160;protected]</span></a>
+    <a href="mailto:manam.crafts@gmail.com">manam.crafts@gmail.com</a>
   </div>
-  <div>© 2025 Manam Crafts. All rights reserved.</div>
+  <div>© 2026 Manam Crafts. All rights reserved.</div>
 </footer>
 
 <!-- FLOATING WA BUTTON -->
@@ -1575,7 +1575,7 @@ body.lang-ta span[data-en] { display: none; }
   <button class="lang-btn" onclick="setLang('ta')">தமிழ்</button>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 // Language
 function setLang(lang) {
   document.body.className = lang === 'ta' ? 'lang-ta' : '';
@@ -1670,52 +1670,28 @@ function ofSubmit() {
   const price = OF_PRICES[product] || 0;
   const total = price * parseInt(qty);
 
-  // ════════════════════════════════════════════════════════════════════
-  // AUTO-SAVE TO GOOGLE SHEETS — HOW IT WORKS:
-  //
-  //   This form silently POSTs to your Google Form's backend (formResponse URL).
-  //   Google Forms automatically writes every submission into Google Sheets.
-  //   Zero server needed. Fully automatic.
-  //
-  // ONE-TIME SETUP (5 minutes):
-  //
-  //   STEP A — Get your formResponse URL:
-  //     1. Open your Google Form in edit mode
-  //     2. Click the Preview eye icon (top right)
-  //     3. Copy the browser URL → it looks like:
-  //        https://docs.google.com/forms/d/e/XXXXXX.../viewform
-  //     4. Change "viewform" → "formResponse"
-  //     5. Paste that URL as GFORM_URL below
-  //
-  //   STEP B — Get Entry IDs for each question:
-  //     1. On the Preview page, press F12 (Inspect)
-  //     2. Press Ctrl+F, search: entry.
-  //     3. Each question has: name="entry.123456789"
-  //     4. Match each entry ID to the right field below
-  //     5. Uncomment the params.append lines
-  //
-  //   STEP C — Save HTML and re-upload to Netlify. Done!
-  //     Every order = auto row in Google Sheets = email alert fires.
-  // ════════════════════════════════════════════════════════════════════
+  // ── SUBMIT TO GOOGLE FORMS via hidden iframe (most reliable no-cors method) ──
+  const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxwlPWkOII4-Z0s3zeliV7eyWbK4BYqD5_BPwhRljFVM7w2Ax2rXu3W13LM3lcvaryf/exec';
 
-  const GFORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLScGu2d-zPsTodCbP5G4u13zTAaJdhV0CnTsQYBnz-XrPw0EHg/formResponse';
+  const qs = '?name='    + encodeURIComponent(name)
+           + '&phone='   + encodeURIComponent(phone)
+           + '&city='    + encodeURIComponent(city)
+           + '&address=' + encodeURIComponent(address)
+           + '&pin='     + encodeURIComponent(pin)
+           + '&product=' + encodeURIComponent(product)
+           + '&qty='     + encodeURIComponent(qty)
+           + '&price='   + encodeURIComponent(price)
+           + '&total='   + encodeURIComponent(total)
+           + '&paymode=' + encodeURIComponent(paymode)
+           + '&note='    + encodeURIComponent(note)
+           + '&txn='     + encodeURIComponent(txn);
 
-  const params = new URLSearchParams();
-  params.append('entry.924321959',  name);     // Customer Name
-  params.append('entry.605713129',  phone);    // Phone Number
-  params.append('entry.365684854',  city);     // City
-  params.append('entry.645250027',  address);  // Full Address
-  params.append('entry.289534555',  pin);      // Pincode
-  params.append('entry.713407889',  product);  // Product
-  params.append('entry.562161958',  qty);      // Quantity
-  params.append('entry.1897054533', paymode);  // Payment Mode
-  params.append('entry.1708475970', note);     // Special Instructions
+  // Send to Apps Script → writes directly to Google Sheets + sends email
+  fetch(APPS_SCRIPT_URL + qs, { method: 'GET', mode: 'no-cors' }).catch(() => {});
+  new Image().src = APPS_SCRIPT_URL + qs + '&t=' + Date.now();
 
-  // Silent POST to Google Forms → auto-saves to Google Sheets
-  fetch(GFORM_URL + '?' + params.toString(), { method: 'POST', mode: 'no-cors' })
-    .catch(() => {}); // Fail silently — submission still goes through
 
-  // Show Thank You screen
+  // ── Show Thank You screen ──
   document.getElementById('order-form-body').style.display = 'none';
   const ty = document.getElementById('order-thankyou');
   ty.style.display = 'block';
