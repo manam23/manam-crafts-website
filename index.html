@@ -636,7 +636,7 @@ body.lang-ta span[data-en] { display: none; }
 </div>
 
 <!-- HIDDEN IFRAME for form submission (no-cors bypass) -->
-<iframe name="hidden-submit-frame" style="display:none"></iframe>
+\\<iframe name="hidden-submit-frame" style="display:none"></iframe>
 
 <script>
 // ══ APPS SCRIPT URL ══
@@ -740,26 +740,6 @@ function ofSubmit() {
   // ── METHOD 1: fetch (no-cors) ──
   fetch(APPS_SCRIPT_URL + '?' + params.toString(), { method: 'GET', mode: 'no-cors' })
     .catch(() => {});
-
-  // ── METHOD 2: Image ping (backup, always fires) ──
-  const img = new Image();
-  img.src = APPS_SCRIPT_URL + '?' + params.toString() + '&t=' + Date.now();
-
-  // ── METHOD 3: Hidden form POST via iframe (most reliable for CORS environments) ──
-  try {
-    const form = document.createElement('form');
-    form.method = 'GET';
-    form.action = APPS_SCRIPT_URL;
-    form.target = 'hidden-submit-frame';
-    params.forEach((val, key) => {
-      const input = document.createElement('input');
-      input.type = 'hidden'; input.name = key; input.value = val;
-      form.appendChild(input);
-    });
-    document.body.appendChild(form);
-    form.submit();
-    setTimeout(() => document.body.removeChild(form), 3000);
-  } catch(e) {}
 
   // Show Thank You screen after 1.2s (give submissions time to fire)
   setTimeout(() => {
