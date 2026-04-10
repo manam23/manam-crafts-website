@@ -536,11 +536,11 @@ body.lang-ta span[data-en] { display: none; }
             <label>Product <span class="req">*</span></label>
             <select id="of-product" onchange="ofCalc()">
               <option value="">— Select product —</option>
-              <option value="Keychain" data-price="50">🔑 Crochet Keychain</option>
-              <option value="Bouquet" data-price="300">💐 Pipe Cleaner Bouquet</option>
-              <option value="Sling Bag" data-price="450">👜 Crochet Sling Bag</option>
-              <option value="LED Stand" data-price="600">💡 Crochet LED Stand</option>
-              <option value="Bookmark" data-price="80">🔖 Crochet Bookmark</option>
+             <option value="Crochet Keychain" data-price="50">🔑 Crochet Keychain</option>
+             <option value="Pipe Cleaner Bouquet" data-price="300">💐 Pipe Cleaner Bouquet</option>
+             <option value="Crochet Sling Bag" data-price="450">👜 Crochet Sling Bag</option>
+             <option value="Crochet LED Stand" data-price="600">💡 Crochet LED Stand</option>
+             <option value="Crochet Bookmark" data-price="80">🔖 Crochet Bookmark</option>
             </select>
           </div>
           <div class="fg order-trio-qty"><label>Qty <span class="req">*</span></label><input type="number" id="of-qty" min="1" max="99" value="1" oninput="ofCalc()" inputmode="numeric"/></div>
@@ -675,8 +675,13 @@ function sendEnquiry() {
 }
 
 // ══ ORDER FORM LOGIC ══
-const OF_PRICES = { Keychain:50, Bouquet:300, 'Sling Bag':450, 'LED Stand':600, Bookmark:80 };
-
+const OF_PRICES = { 
+  'Crochet Keychain':50, 
+  'Pipe Cleaner Bouquet':300, 
+  'Crochet Sling Bag':450, 
+  'Crochet LED Stand':600, 
+  'Crochet Bookmark':80 
+};
 function ofCalc() {
   const sel   = document.getElementById('of-product');
   const qty   = parseInt(document.getElementById('of-qty').value) || 0;
