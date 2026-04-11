@@ -5,8 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Manam Crafts — Handmade with Love, Coimbatore</title>
 <meta name="description" content="Handcrafted crochet keychains, bouquets, sling bags and pipe cleaner flowers made with love in Coimbatore. Order via WhatsApp."/>
-
-<!-- Open Graph / Facebook -->
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://manamcrafts.in/"/>
 <meta property="og:title" content="Manam Crafts — Handmade with Love"/>
@@ -16,22 +14,15 @@
 <meta property="og:image:height" content="630"/>
 <meta property="og:locale" content="en_IN"/>
 <meta property="og:site_name" content="Manam Crafts"/>
-
-<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Manam Crafts — Handmade with Love"/>
 <meta name="twitter:description" content="Beautiful handcrafted crochet & pipe cleaner creations from Coimbatore."/>
 <meta name="twitter:image" content="og-image.png"/>
-
-<!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
 <link rel="apple-touch-icon" href="favicon-180.png"/>
-
-<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
-
 <style>
 :root {
   --amber:    #D4771A;
@@ -52,14 +43,11 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); overflow-x: hidden; }
-
 .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
 .serif { font-family: 'Playfair Display', serif; }
 .section { padding: 80px 0; }
 .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 2.8rem); color: var(--amber-d); margin-bottom: 12px; }
 .section-sub { color: var(--text-s); font-size: 1rem; font-weight: 300; max-width: 520px; }
-
-/* NAV */
 nav { position: fixed; top: 0; width: 100%; z-index: 100; background: rgba(253,247,239,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); transition: box-shadow .3s; }
 nav.scrolled { box-shadow: 0 2px 20px rgba(90,40,0,.08); }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
@@ -74,8 +62,6 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(90,40,0,.08); }
 .nav-wa:hover { opacity: .9; transform: translateY(-1px); }
 .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
 .hamburger span { display: block; width: 22px; height: 2px; background: var(--amber-d); border-radius: 2px; transition: .3s; }
-
-/* HERO */
 .hero { min-height: 100vh; background: radial-gradient(ellipse 80% 60% at 70% 40%, rgba(212,119,26,.12) 0%, transparent 70%), radial-gradient(ellipse 60% 80% at 10% 90%, rgba(92,51,23,.08) 0%, transparent 60%), var(--warm-w); display: flex; align-items: center; padding-top: 64px; position: relative; overflow: hidden; }
 .hero::before { content: ''; position: absolute; right: -80px; top: 80px; width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(212,119,26,.08) 0%, transparent 70%); pointer-events: none; }
 .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; padding: 60px 0; }
@@ -96,8 +82,6 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(90,40,0,.08); }
 .hero-stats { display: flex; gap: 28px; margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--border); }
 .stat-num { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--amber-d); font-weight: 700; }
 .stat-label { font-size: .8rem; color: var(--text-m); font-weight: 300; }
-
-/* Hero visual */
 .hero-visual { position: relative; display: flex; justify-content: center; align-items: center; }
 .hero-card-stack { position: relative; width: 320px; height: 380px; }
 .hero-card { position: absolute; background: #fff; border-radius: 20px; padding: 22px; box-shadow: 0 8px 40px rgba(90,40,0,.1); border: 1px solid var(--border); }
@@ -113,8 +97,6 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(90,40,0,.08); }
 .hf2 { bottom: 40px; right: -30px; animation: float2 5s ease-in-out infinite .5s; }
 @keyframes float1 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
 @keyframes float2 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(6px)} }
-
-/* ABOUT */
 .about { background: var(--brown-l); }
 .about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
 .about-tag { display: inline-block; background: var(--amber); color: #fff; font-size: .75rem; font-weight: 600; padding: 4px 14px; border-radius: 20px; letter-spacing: .06em; margin-bottom: 16px; text-transform: uppercase; }
@@ -127,8 +109,6 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(90,40,0,.08); }
 .about-card-icon { font-size: 2rem; margin-bottom: 10px; }
 .about-card-label { font-family: 'Playfair Display', serif; font-size: .95rem; color: var(--brown); margin-bottom: 4px; }
 .about-card-note { font-size: .78rem; color: var(--text-m); }
-
-/* PRODUCTS */
 .products { background: var(--cream); }
 .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; margin-top: 48px; }
 .product-card { background: #fff; border-radius: 20px; overflow: hidden; border: 1px solid var(--border); transition: transform .25s, box-shadow .25s; cursor: pointer; }
@@ -150,14 +130,11 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(90,40,0,.08); }
 .coming-soon-card .icon { font-size: 2.5rem; }
 .coming-soon-card .label { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--brown); }
 .coming-soon-card .note { font-size: .8rem; }
-
-/* HOW TO ORDER */
 .order-section { background: var(--amber-d); }
 .order-section .section-title { color: #fff; }
 .order-section .section-sub { color: rgba(255,255,255,.7); }
 .order-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 48px; }
 .order-step { background: rgba(255,255,255,.1); border-radius: 16px; padding: 28px 20px; text-align: center; border: 1px solid rgba(255,255,255,.15); position: relative; }
-.order-step-num { width: 40px; height: 40px; background: var(--amber-m); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #fff; margin: 0 auto 14px; }
 .order-step-icon { font-size: 1.8rem; margin-bottom: 12px; }
 .order-step-title { font-family: 'Playfair Display', serif; font-size: 1rem; color: #fff; margin-bottom: 6px; }
 .order-step-note { font-size: .82rem; color: rgba(255,255,255,.65); line-height: 1.5; }
@@ -165,19 +142,13 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(90,40,0,.08); }
 .order-cta { text-align: center; margin-top: 48px; }
 .btn-wa-large { display: inline-flex; align-items: center; gap: 12px; background: var(--wa); color: #fff; padding: 16px 36px; border-radius: 50px; font-size: 1.05rem; font-weight: 500; text-decoration: none; box-shadow: 0 6px 30px rgba(0,0,0,.25); transition: transform .2s, box-shadow .2s; }
 .btn-wa-large:hover { transform: translateY(-3px); box-shadow: 0 10px 40px rgba(0,0,0,.3); }
-
-/* LANGUAGE TOGGLE */
 .lang-toggle { position: fixed; bottom: 90px; right: 24px; z-index: 99; background: #fff; border: 1px solid var(--border); border-radius: 50px; padding: 6px; display: flex; box-shadow: 0 4px 20px rgba(90,40,0,.12); }
 .lang-btn { padding: 6px 14px; border-radius: 40px; border: none; background: none; font-size: .82rem; font-weight: 500; cursor: pointer; color: var(--text-m); transition: .2s; }
 .lang-btn.active { background: var(--amber); color: #fff; }
-
-/* FLOATING WA */
 .wa-float { position: fixed; bottom: 24px; right: 24px; z-index: 99; width: 56px; height: 56px; background: var(--wa); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37,211,102,.4); text-decoration: none; animation: wa-pulse 3s ease-in-out infinite; transition: transform .2s; }
 .wa-float:hover { transform: scale(1.1); }
 @keyframes wa-pulse { 0%,100%{ box-shadow: 0 4px 20px rgba(37,211,102,.4); } 50%{ box-shadow: 0 4px 30px rgba(37,211,102,.7); } }
 .wa-float svg { width: 30px; height: 30px; fill: #fff; }
-
-/* CONTACT / FOOTER */
 .contact { background: var(--brown-l); }
 .contact-inner { display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: start; }
 .contact-info { display: flex; flex-direction: column; gap: 16px; margin-top: 28px; }
@@ -199,19 +170,14 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(90,40,0,.08); }
 .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--amber); }
 .form-submit { display: flex; align-items: center; gap: 10px; background: var(--wa); color: #fff; border: none; border-radius: 50px; padding: 13px 26px; font-size: .95rem; font-weight: 500; cursor: pointer; width: 100%; justify-content: center; transition: opacity .2s, transform .2s; }
 .form-submit:hover { opacity: .9; transform: translateY(-1px); }
-
 footer { background: var(--brown); color: rgba(255,255,255,.6); text-align: center; padding: 28px 24px; font-size: .85rem; }
 footer strong { color: rgba(255,255,255,.9); }
 footer a { color: var(--amber-m); text-decoration: none; }
-
-/* LANG */
 [data-ta] { display: none; }
 body.lang-ta [data-en] { display: none; }
 body.lang-ta [data-ta] { display: block; }
 body.lang-ta span[data-ta] { display: inline; }
 body.lang-ta span[data-en] { display: none; }
-
-/* RESPONSIVE */
 @media (max-width: 768px) {
   .hero-inner { grid-template-columns: 1fr; gap: 40px; }
   .hero-visual { display: none; }
@@ -228,11 +194,8 @@ body.lang-ta span[data-en] { display: none; }
   .order-steps { grid-template-columns: 1fr; }
   .hero-stats { flex-wrap: wrap; gap: 16px; }
 }
-
 .fade-up { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
 .fade-up.visible { opacity: 1; transform: translateY(0); }
-
-/* PLACE ORDER SECTION */
 .place-order { background: var(--cream); }
 .price-ref-bar { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; background: var(--amber-d); padding: 14px 24px; border-radius: 14px; margin-bottom: 40px; }
 .price-ref-pill { background: rgba(255,255,255,.15); color: #fff; font-size: .8rem; font-weight: 500; padding: 5px 16px; border-radius: 20px; border: 1px solid rgba(255,255,255,.2); }
@@ -253,16 +216,12 @@ body.lang-ta span[data-en] { display: none; }
 .fg input:focus, .fg select:focus, .fg textarea:focus { border-color: var(--amber); box-shadow: 0 0 0 3px rgba(212,119,26,.1); background: #fff; }
 .fg select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%239C7A5A' d='M6 8L1 3h10z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; padding-right: 34px; }
 .fg textarea { resize: vertical; min-height: 72px; }
-
-/* Order trio row */
 .order-trio-row { display: grid; grid-template-columns: 2fr 80px 1fr; gap: 12px; align-items: end; margin-bottom: 14px; }
 @media(max-width:540px) { .order-trio-row { grid-template-columns: 1fr 1fr; } .order-trio-product { grid-column: 1 / -1; } }
 .amount-inline-box { height: 44px; border-radius: 10px; border: 1.5px solid var(--border); background: var(--amber-l); display: flex; align-items: center; justify-content: center; transition: border-color .3s, background .3s; padding: 0 12px; overflow: hidden; }
 .amount-inline-box.has-value { border-color: var(--amber); background: linear-gradient(135deg, var(--amber-l), #FEF0D5); }
 .amount-inline-empty { font-size: .75rem; color: var(--text-m); text-align: center; line-height: 1.3; }
 .amount-inline-val { font-family: 'Playfair Display', serif; font-size: 1.25rem; color: var(--amber-d); font-weight: 700; white-space: nowrap; }
-
-/* Payment */
 .upi-info-box { display: none; background: var(--brown-l); border: 1.5px solid var(--border); border-radius: 14px; padding: 20px; margin-bottom: 14px; text-align: center; }
 .upi-info-box.show { display: block; }
 .upi-info-box h4 { font-family: 'Playfair Display', serif; color: var(--amber-d); font-size: 1rem; margin-bottom: 8px; font-style: italic; }
@@ -273,13 +232,9 @@ body.lang-ta span[data-en] { display: none; }
 .upi-note-small { font-size: .75rem; color: var(--text-m); margin-top: 6px; }
 .txn-field { display: none; }
 .txn-field.show { display: block; }
-
-/* Submit button */
 .order-submit-btn { width: 100%; padding: 15px; background: linear-gradient(135deg, var(--amber-d), #D4771A); color: #fff; border: none; border-radius: 12px; font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 500; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; transition: transform .15s, box-shadow .15s; margin-top: 8px; letter-spacing: .02em; }
 .order-submit-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(122,63,10,.35); }
 .order-submit-btn:disabled { opacity: .6; cursor: not-allowed; transform: none; }
-
-/* Thank You screen */
 .order-thankyou { display: none; text-align: center; padding: 52px 32px; animation: tyFade .6s ease both; }
 @keyframes tyFade { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
 .ty-icon-big { font-size: 3.6rem; display: block; margin-bottom: 16px; animation: tyPop .5s cubic-bezier(.34,1.56,.64,1) .2s both; }
@@ -293,8 +248,6 @@ body.lang-ta span[data-en] { display: none; }
 </style>
 </head>
 <body>
-
-<!-- NAV -->
 <nav id="main-nav">
   <div class="container">
     <div class="nav-inner">
@@ -327,8 +280,6 @@ body.lang-ta span[data-en] { display: none; }
     </div>
   </div>
 </nav>
-
-<!-- MOBILE NAV -->
 <div class="mobile-nav" id="mobile-nav">
   <a href="#about" onclick="closeMobileNav()">About</a>
   <a href="#products" onclick="closeMobileNav()">Products</a>
@@ -337,8 +288,6 @@ body.lang-ta span[data-en] { display: none; }
   <a href="#contact" onclick="closeMobileNav()">Contact</a>
   <a href="https://wa.me/919894122166" target="_blank" style="color:#25D366 !important">WhatsApp Order</a>
 </div>
-
-<!-- HERO -->
 <section class="hero" id="home">
   <div class="container">
     <div class="hero-inner">
@@ -376,8 +325,6 @@ body.lang-ta span[data-en] { display: none; }
     </div>
   </div>
 </section>
-
-<!-- ABOUT -->
 <section class="section about" id="about">
   <div class="container">
     <div class="about-inner">
@@ -401,8 +348,6 @@ body.lang-ta span[data-en] { display: none; }
     </div>
   </div>
 </section>
-
-<!-- PRODUCTS -->
 <section class="section products" id="products">
   <div class="container">
     <div class="fade-up">
@@ -422,7 +367,7 @@ body.lang-ta span[data-en] { display: none; }
             <div class="product-price">₹50 <span data-en>per piece</span><span data-ta>ஒரு துண்டு</span></div>
             <div class="product-badge badge-avail" data-en>Available</div><div class="product-badge badge-avail" data-ta>கிடைக்கும்</div>
           </div>
-          <a href="https://wa.me/919894122166?text=Hi%20Manam%20Crafts!%20I%20want%20to%20order%20a%20Crochet%20Keychain%20(₹50)." target="_blank" class="product-order-btn">
+          <a href="https://wa.me/919894122166?text=Hi%20Manam%20Crafts!%20I%20want%20to%20order%20a%20Crochet%20Keychain%20(%E2%82%B950)." target="_blank" class="product-order-btn">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             <span data-en>Order on WhatsApp</span><span data-ta>WhatsApp-ல் ஆர்டர்</span>
           </a>
@@ -431,14 +376,14 @@ body.lang-ta span[data-en] { display: none; }
       <div class="product-card fade-up">
         <div class="product-img" style="background: linear-gradient(135deg, #FDE8F3, #FCE4E4);"><div class="product-img-bg">💐</div><span style="font-size:4rem; z-index:1; position:relative">💐</span></div>
         <div class="product-body">
-          <div class="product-name" data-en>Customised Bouquet</div><div class="product-name" data-ta>தனிப்பட்ட Bouquet</div>
+          <div class="product-name" data-en>Pipe Cleaner Bouquet</div><div class="product-name" data-ta>தனிப்பட்ட Bouquet</div>
           <div class="product-desc" data-en>Beautiful handmade bouquets using pipe cleaner and crochet flowers. Perfect for birthdays, anniversaries, and special occasions.</div>
           <div class="product-desc" data-ta>அழகான கைவினை bouquets — பிறந்தநாள், ஆண்டுவிழா மற்றும் சிறப்பு நிகழ்வுகளுக்கு ஏற்றது.</div>
           <div class="product-footer">
             <div class="product-price">₹300+ <span data-en>customised</span><span data-ta>தனிப்பயன்</span></div>
             <div class="product-badge badge-custom" data-en>Custom Order</div><div class="product-badge badge-custom" data-ta>தனிப்பட்ட ஆர்டர்</div>
           </div>
-          <a href="https://wa.me/919894122166?text=Hi%20Manam%20Crafts!%20I%20want%20to%20order%20a%20Customised%20Bouquet." target="_blank" class="product-order-btn">
+          <a href="https://wa.me/919894122166?text=Hi%20Manam%20Crafts!%20I%20want%20to%20order%20a%20Pipe%20Cleaner%20Bouquet." target="_blank" class="product-order-btn">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             <span data-en>Order on WhatsApp</span><span data-ta>WhatsApp-ல் ஆர்டர்</span>
           </a>
@@ -454,8 +399,6 @@ body.lang-ta span[data-en] { display: none; }
     </div>
   </div>
 </section>
-
-<!-- HOW TO ORDER -->
 <section class="section order-section" id="order">
   <div class="container">
     <h2 class="section-title" data-en>How to Order</h2>
@@ -466,7 +409,7 @@ body.lang-ta span[data-en] { display: none; }
       <div class="order-step"><div class="order-step-icon">👀</div><div class="order-step-title" data-en>Browse products</div><div class="order-step-title" data-ta>பொருட்களை பார்க்கவும்</div><div class="order-step-note" data-en>Explore our handmade creations above</div><div class="order-step-note" data-ta>மேலே உள்ள படைப்புகளை பாருங்கள்</div><div class="order-step-arrow">›</div></div>
       <div class="order-step"><div class="order-step-icon">💬</div><div class="order-step-title" data-en>WhatsApp us</div><div class="order-step-title" data-ta>WhatsApp செய்யுங்கள்</div><div class="order-step-note" data-en>Tell us what you want and your requirements</div><div class="order-step-note" data-ta>உங்கள் தேவைகளை சொல்லுங்கள்</div><div class="order-step-arrow">›</div></div>
       <div class="order-step"><div class="order-step-icon">🎨</div><div class="order-step-title" data-en>We customise</div><div class="order-step-title" data-ta>நாங்கள் தயார் செய்கிறோம்</div><div class="order-step-note" data-en>We craft your piece with love and care</div><div class="order-step-note" data-ta>அன்புடன் உங்கள் படைப்பை செய்கிறோம்</div><div class="order-step-arrow">›</div></div>
-      <div class="order-step"><div class="order-step-icon">📦</div><div class="order-step-title" data-en>Receive & enjoy</div><div class="order-step-title" data-ta>பெறுங்கள் மகிழுங்கள்</div><div class="order-step-note" data-en>Delivered to you in Coimbatore</div><div class="order-step-note" data-ta>கோவையில் உங்களிடம் வழங்கப்படும்</div></div>
+      <div class="order-step"><div class="order-step-icon">📦</div><div class="order-step-title" data-en>Receive & enjoy</div><div class="order-step-title" data-ta>பெறுங்கள் மகிழுங்கள்</div><div class="order-step-note" data-en>Delivered to you with love</div><div class="order-step-note" data-ta>அன்புடன் வழங்கப்படும்</div></div>
     </div>
     <div class="order-cta">
       <a href="https://wa.me/919894122166?text=Hi%20Manam%20Crafts!%20I%20would%20like%20to%20place%20an%20order." target="_blank" class="btn-wa-large">
@@ -477,8 +420,6 @@ body.lang-ta span[data-en] { display: none; }
     </div>
   </div>
 </section>
-
-<!-- PLACE ORDER -->
 <section class="section place-order" id="place-order">
   <div class="container">
     <div class="fade-up" style="text-align:center; margin-bottom:8px">
@@ -488,11 +429,11 @@ body.lang-ta span[data-en] { display: none; }
       <p class="section-sub" style="margin:0 auto 32px; text-align:center" data-ta>கீழே படிவத்தை நிரப்புங்கள் — தொகை தானாக கணக்கிடப்படும்.</p>
     </div>
     <div class="price-ref-bar fade-up">
-      <span class="price-ref-pill">🔑 Keychain ₹50</span>
-      <span class="price-ref-pill">💐 Bouquet ₹300</span>
-      <span class="price-ref-pill">👜 Sling Bag ₹450</span>
-      <span class="price-ref-pill">💡 LED Stand ₹600</span>
-      <span class="price-ref-pill">🔖 Bookmark ₹80</span>
+      <span class="price-ref-pill">🔑 Crochet Keychain ₹50</span>
+      <span class="price-ref-pill">💐 Pipe Cleaner Bouquet ₹300</span>
+      <span class="price-ref-pill">👜 Crochet Sling Bag ₹450</span>
+      <span class="price-ref-pill">💡 Crochet LED Stand ₹600</span>
+      <span class="price-ref-pill">🔖 Crochet Bookmark ₹80</span>
     </div>
     <div class="order-form-card fade-up">
       <div class="order-form-header">
@@ -503,8 +444,6 @@ body.lang-ta span[data-en] { display: none; }
           <p data-ta>உங்களுக்காக கையால் செய்யப்பட்டது — ராதா, Manam Crafts</p>
         </div>
       </div>
-
-      <!-- THANK YOU SCREEN -->
       <div class="order-thankyou" id="order-thankyou">
         <span class="ty-icon-big">🌸</span>
         <div class="ty-title" data-en>Thank you so much!</div>
@@ -518,8 +457,6 @@ body.lang-ta span[data-en] { display: none; }
         </a>
         <span class="ty-heart">Made with love, from the bottom of our heart 💕<br/>— Team Manam Crafts</span>
       </div>
-
-      <!-- FORM BODY -->
       <div class="order-form-body" id="order-form-body">
         <div class="form-section-label">👤 Your Details</div>
         <div class="fg"><label>Customer Name <span class="req">*</span></label><input type="text" id="of-name" placeholder="Your full name" autocomplete="name"/></div>
@@ -529,18 +466,17 @@ body.lang-ta span[data-en] { display: none; }
         </div>
         <div class="fg"><label>Full Delivery Address <span class="req">*</span></label><textarea id="of-address" placeholder="Door No, Street, Area, Landmark…"></textarea></div>
         <div class="fg"><label>Pincode <span class="req">*</span></label><input type="text" id="of-pin" placeholder="6-digit pincode" maxlength="6" inputmode="numeric"/></div>
-
         <div class="form-section-label">🛍️ Your Order</div>
         <div class="order-trio-row">
           <div class="fg order-trio-product">
             <label>Product <span class="req">*</span></label>
             <select id="of-product" onchange="ofCalc()">
               <option value="">— Select product —</option>
-             <option value="Crochet Keychain" data-price="50">🔑 Crochet Keychain</option>
-             <option value="Pipe Cleaner Bouquet" data-price="300">💐 Pipe Cleaner Bouquet</option>
-             <option value="Crochet Sling Bag" data-price="450">👜 Crochet Sling Bag</option>
-             <option value="Crochet LED Stand" data-price="600">💡 Crochet LED Stand</option>
-             <option value="Crochet Bookmark" data-price="80">🔖 Crochet Bookmark</option>
+              <option value="Crochet Keychain" data-price="50">🔑 Crochet Keychain — ₹50</option>
+              <option value="Pipe Cleaner Bouquet" data-price="300">💐 Pipe Cleaner Bouquet — ₹300</option>
+              <option value="Crochet Sling Bag" data-price="450">👜 Crochet Sling Bag — ₹450</option>
+              <option value="Crochet LED Stand" data-price="600">💡 Crochet LED Stand — ₹600</option>
+              <option value="Crochet Bookmark" data-price="80">🔖 Crochet Bookmark — ₹80</option>
             </select>
           </div>
           <div class="fg order-trio-qty"><label>Qty <span class="req">*</span></label><input type="number" id="of-qty" min="1" max="99" value="1" oninput="ofCalc()" inputmode="numeric"/></div>
@@ -553,7 +489,6 @@ body.lang-ta span[data-en] { display: none; }
           </div>
         </div>
         <div class="fg"><label>Special Instructions</label><textarea id="of-note" placeholder="Color preferences, occasion, gift message…"></textarea></div>
-
         <div class="form-section-label">💳 Payment</div>
         <div class="fg">
           <label>Payment Mode <span class="req">*</span></label>
@@ -567,17 +502,14 @@ body.lang-ta span[data-en] { display: none; }
         <div class="upi-info-box" id="of-upi-box">
           <h4>Pay via UPI</h4>
           <p style="font-size:.78rem; color:var(--text-m)">Scan QR code or use UPI ID below</p>
-          <!-- When upi-qr.png is uploaded to Netlify, replace the div below with:
-               <img src="upi-qr.png" alt="Manam Crafts UPI QR" class="qr-img"/> -->
-          <div class="qr-placeholder"><div class="qr-icon">📱</div><strong>QR Code</strong><span>Upload upi-qr.png<br/>to replace this</span></div>
+          <div class="qr-placeholder"><div class="qr-icon">📱</div><strong>QR Code</strong><span>Upload upi-qr.png to replace this</span></div>
           <div class="upi-id-display">9688396280@upi</div>
-          <p class="upi-note-small">After payment, enter the Transaction ID in the field below ↓</p>
+          <p class="upi-note-small">After payment, enter the Transaction ID below ↓</p>
         </div>
         <div class="fg txn-field" id="of-txn-field">
           <label>Payment Transaction ID <span class="req">*</span></label>
           <input type="text" id="of-txn" placeholder="Transaction ID from your UPI app"/>
         </div>
-
         <button class="order-submit-btn" id="of-submit-btn" onclick="ofSubmit()">
           🌸 Submit My Order
         </button>
@@ -585,8 +517,6 @@ body.lang-ta span[data-en] { display: none; }
     </div>
   </div>
 </section>
-
-<!-- CONTACT -->
 <section class="section contact" id="contact">
   <div class="container">
     <div class="contact-inner">
@@ -606,7 +536,7 @@ body.lang-ta span[data-en] { display: none; }
         <div class="contact-form-title" data-en>Quick Order Enquiry</div>
         <div class="contact-form-title" data-ta>விரைவு ஆர்டர் விசாரணை</div>
         <div class="form-group"><label data-en>Your Name</label><label data-ta>உங்கள் பெயர்</label><input type="text" id="f-name" placeholder="Priya / பிரியா"/></div>
-        <div class="form-group"><label data-en>Product Interested In</label><label data-ta>விரும்பும் பொருள்</label><select id="f-product"><option value="Crochet Keychain (₹50)">Crochet Keychain — ₹50</option><option value="Customised Bouquet (₹300+)">Customised Bouquet — ₹300+</option><option value="Other / Custom">Other / Custom order</option></select></div>
+        <div class="form-group"><label data-en>Product Interested In</label><label data-ta>விரும்பும் பொருள்</label><select id="f-product"><option value="Crochet Keychain (₹50)">Crochet Keychain — ₹50</option><option value="Pipe Cleaner Bouquet (₹300+)">Pipe Cleaner Bouquet — ₹300+</option><option value="Crochet Sling Bag (₹450)">Crochet Sling Bag — ₹450</option><option value="Crochet LED Stand (₹600)">Crochet LED Stand — ₹600</option><option value="Crochet Bookmark (₹80)">Crochet Bookmark — ₹80</option><option value="Other / Custom">Other / Custom order</option></select></div>
         <div class="form-group"><label data-en>Any special requirements?</label><label data-ta>சிறப்பு தேவைகள்?</label><textarea id="f-msg" rows="3" placeholder="Colors, occasion, quantity..."></textarea></div>
         <button class="form-submit" onclick="sendEnquiry()">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -616,55 +546,39 @@ body.lang-ta span[data-en] { display: none; }
     </div>
   </div>
 </section>
-
-<!-- FOOTER -->
 <footer>
   <div style="margin-bottom:8px"><strong>Manam Crafts</strong> — Handmade with love in Coimbatore, Tamil Nadu 🌸</div>
   <div style="margin-bottom:8px"><a href="https://wa.me/919894122166">WhatsApp</a> &nbsp;·&nbsp; <a href="https://instagram.com/manam.crafts">@manam.crafts</a> &nbsp;·&nbsp; <a href="mailto:manam.crafts@gmail.com">manam.crafts@gmail.com</a></div>
   <div>© 2026 Manam Crafts. All rights reserved.</div>
 </footer>
-
-<!-- FLOATING WA -->
 <a href="https://wa.me/919894122166?text=Hi%20Manam%20Crafts!" target="_blank" class="wa-float" title="Chat on WhatsApp">
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
-
-<!-- LANGUAGE TOGGLE -->
 <div class="lang-toggle">
   <button class="lang-btn active" onclick="setLang('en')">EN</button>
   <button class="lang-btn" onclick="setLang('ta')">தமிழ்</button>
 </div>
-
-<!-- HIDDEN IFRAME for form submission (no-cors bypass) -->
-\\<iframe name="hidden-submit-frame" style="display:none"></iframe>
-
 <script>
-// ══ APPS SCRIPT URL ══
 const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx4BYdsVsvqQwa8OOHonr8OUf074zBAL2hPzz2vcTbVur127s69rg6N3FScnzJeMjM/exec';
 
-// Language
 function setLang(lang) {
   document.body.className = lang === 'ta' ? 'lang-ta' : '';
   document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
   event.target.classList.add('active');
 }
 
-// Nav scroll
 window.addEventListener('scroll', () => {
   document.getElementById('main-nav').classList.toggle('scrolled', window.scrollY > 20);
 });
 
-// Mobile nav
 function toggleMobileNav() { document.getElementById('mobile-nav').classList.toggle('open'); }
 function closeMobileNav() { document.getElementById('mobile-nav').classList.remove('open'); }
 
-// Fade-up observer
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.12 });
 document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
 
-// WhatsApp enquiry
 function sendEnquiry() {
   const name = document.getElementById('f-name').value.trim();
   const product = document.getElementById('f-product').value;
@@ -674,14 +588,14 @@ function sendEnquiry() {
   window.open('https://wa.me/919894122166?text=' + text, '_blank');
 }
 
-// ══ ORDER FORM LOGIC ══
-const OF_PRICES = { 
-  'Crochet Keychain':50, 
-  'Pipe Cleaner Bouquet':300, 
-  'Crochet Sling Bag':450, 
-  'Crochet LED Stand':600, 
-  'Crochet Bookmark':80 
+const OF_PRICES = {
+  'Crochet Keychain': 50,
+  'Pipe Cleaner Bouquet': 300,
+  'Crochet Sling Bag': 450,
+  'Crochet LED Stand': 600,
+  'Crochet Bookmark': 80
 };
+
 function ofCalc() {
   const sel   = document.getElementById('of-product');
   const qty   = parseInt(document.getElementById('of-qty').value) || 0;
@@ -718,12 +632,11 @@ function ofSubmit() {
   const note    = document.getElementById('of-note').value.trim();
   const txn     = document.getElementById('of-txn').value.trim();
 
-  // Validation
   if (!name || !phone || !city || !address || !pin || !product || !qty || !paymode) {
     alert('Please fill all required fields marked with *'); return;
   }
   if (phone.length !== 10) { alert('Please enter a valid 10-digit phone number.'); return; }
-  if (pin.length   !== 6)  { alert('Please enter a valid 6-digit pincode.'); return; }
+  if (pin.length !== 6) { alert('Please enter a valid 6-digit pincode.'); return; }
   if ((paymode === 'UPI' || paymode === 'Bank Transfer') && !txn) {
     alert('Please enter your Payment Transaction ID.'); return;
   }
@@ -731,22 +644,18 @@ function ofSubmit() {
   const price = OF_PRICES[product] || 0;
   const total = price * parseInt(qty);
 
-  // Disable button to prevent double submit
   const btn = document.getElementById('of-submit-btn');
   btn.disabled = true;
   btn.textContent = '⏳ Submitting…';
 
-  // Build query string
   const params = new URLSearchParams({
     name, phone, city, address, pin, product, qty,
     price, total, paymode, note, txn
   });
 
-  // ── METHOD 1: fetch (no-cors) ──
   fetch(APPS_SCRIPT_URL + '?' + params.toString(), { method: 'GET', mode: 'no-cors' })
     .catch(() => {});
 
-  // Show Thank You screen after 1.2s (give submissions time to fire)
   setTimeout(() => {
     document.getElementById('order-form-body').style.display = 'none';
     const ty = document.getElementById('order-thankyou');
