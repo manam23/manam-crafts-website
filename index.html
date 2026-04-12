@@ -538,27 +538,16 @@ let OF_PRICES = {
   'Crochet Bookmark': 80
 };
 
-// Load live prices from Item Master sheet
-fetch(APPS_SCRIPT_URL + '?action=prices', { method: 'GET', mode: 'no-cors' })
+// Load live prices from Item Master sheet on page load
+fetch(APPS_SCRIPT_URL + '?action=prices')
+  .then(r => r.json())
+  .then(data => {
+    if (data.status === 'prices' && data.prices) {
+      OF_PRICES = data.prices;
+      ofCalc();
+    }
+  })
   .catch(() => {});
-
-// Use JSONP approach to get live prices
-(function loadPrices() {
-  const script = document.createElement('script');
-  const url = APPS_SCRIPT_URL.replace('/exec', '/exec') + '?action=prices&callback=setPrices';
-  fetch(APPS_SCRIPT_URL + '?action=prices')
-    .then(r => r.json())
-    .then(data => {
-      if (data.status === 'prices' && data.prices) {
-        OF_PRICES = data.prices;
-        ofCalc(); // Recalculate if product already selected
-        console.log('Prices loaded from Item Master:', OF_PRICES);
-      }
-    })
-    .catch(() => {
-      console.log('Using default prices');
-    });
-})();
 let appliedDiscount = 0;
 let appliedCoupon   = '';
 
