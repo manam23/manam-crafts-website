@@ -488,22 +488,27 @@ body.lang-ta span[data-en]{display:none;}
   <div style="margin-bottom:8px"><a href="https://wa.me/919894122166">WhatsApp</a> &nbsp;·&nbsp; <a href="https://instagram.com/manam.crafts">@manam.crafts</a> &nbsp;·&nbsp; <a href="mailto:manam.crafts@gmail.com">manam.crafts@gmail.com</a></div>
   <div>© 2026 Manam Crafts. All rights reserved.</div>
 </footer>
-  <script>
+ <script>
+console.log("JS running");
 
 const API = "https://script.google.com/macros/s/AKfycbw7HVw2HPffFzDUMXHxXFrukRVirGpYxViV289Ihodi4NifOB-rc7Y6Bxp4KLTB3Uz0/exec?action=products";
-const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw7HVw2HPffFzDUMXHxXFrukRVirGpYxViV289Ihodi4NifOB-rc7Y6Bxp4KLTB3Uz0/exec";
 
-// ===== PRODUCT LOADER =====
 function loadProducts() {
   const script = document.createElement("script");
   script.src = API + "&callback=handleProducts";
+  console.log("Loading:", script.src);
   document.body.appendChild(script);
 }
 
 function handleProducts(data) {
+  console.log("API DATA:", data);
+
   const container = document.getElementById("products-container");
 
-  if (!container) return;
+  if (!container) {
+    console.error("❌ products-container NOT FOUND");
+    return;
+  }
 
   if (!data || data.status !== "success") {
     container.innerHTML = "<p>No products available</p>";
@@ -515,15 +520,9 @@ function handleProducts(data) {
   data.products.forEach(p => {
     html += `
       <div class="product-card">
-        <div class="product-img">
-          <img src="${p.image || 'https://via.placeholder.com/300'}"
-               onerror="this.src='https://via.placeholder.com/300'">
-        </div>
-        <div class="product-body">
-          <div class="product-name">${p.name}</div>
-          <div class="product-desc">${p.desc || ""}</div>
-          <div class="product-price">₹${p.price}</div>
-        </div>
+        <img src="${p.image || 'https://via.placeholder.com/300'}">
+        <h3>${p.name}</h3>
+        <p>₹${p.price}</p>
       </div>
     `;
   });
@@ -531,20 +530,6 @@ function handleProducts(data) {
   container.innerHTML = html;
 }
 
-// ===== ORDER LOGIC =====
-let OF_PRICES = {
-  'Crochet Keychain': 50,
-  'Pipe Cleaner Bouquet': 300,
-  'Crochet Sling Bag': 450,
-  'Crochet LED Stand': 600,
-  'Crochet Bookmark': 80
-};
-
-let appliedDiscount = 0;
-let appliedCoupon = '';
-
-// (keep your existing order functions here — no change needed)
 loadProducts();
-</script>
-</body>
+</script></body>
 </html>
