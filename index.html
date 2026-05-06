@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -40,10 +42,24 @@ padding:18px 7%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-background:rgba(255,255,255,0.7);
+background:rgba(255,255,255,0.72);
 backdrop-filter:blur(14px);
 z-index:999;
 box-shadow:0 5px 20px rgba(0,0,0,0.05);
+}
+
+.logo-area{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.site-logo{
+width:52px;
+height:52px;
+object-fit:cover;
+border-radius:50%;
+box-shadow:0 5px 15px rgba(0,0,0,0.12);
 }
 
 .logo-text{
@@ -108,7 +124,14 @@ background:linear-gradient(90deg,#ff7a00,#ffb347);
 font-size:19px;
 line-height:1.8;
 opacity:0.75;
-max-width:600px;
+max-width:620px;
+}
+
+.hero-points{
+margin-top:25px;
+font-size:18px;
+line-height:2;
+color:#555;
 }
 
 .hero-buttons{
@@ -147,12 +170,23 @@ display:flex;
 justify-content:center;
 }
 
-.hero-image img{
-width:100%;
-max-width:450px;
-border-radius:30px;
-box-shadow:0 20px 50px rgba(0,0,0,0.15);
-animation:float 4s ease-in-out infinite;
+.hero-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+}
+
+.hero-grid img{
+width:220px;
+height:220px;
+object-fit:cover;
+border-radius:24px;
+box-shadow:0 15px 35px rgba(0,0,0,0.15);
+transition:0.4s;
+}
+
+.hero-grid img:hover{
+transform:translateY(-8px) scale(1.03);
 }
 
 /* =========================
@@ -247,16 +281,16 @@ ORDER BOX
 ========================= */
 
 .order-box{
-max-width:750px;
+max-width:850px;
 margin:auto;
-background:rgba(255,255,255,0.8);
+background:rgba(255,255,255,0.82);
 padding:45px;
 border-radius:30px;
 backdrop-filter:blur(12px);
 box-shadow:0 15px 45px rgba(0,0,0,0.08);
 }
 
-input,select{
+input,select,textarea{
 width:100%;
 padding:16px;
 margin:12px 0;
@@ -264,6 +298,11 @@ border-radius:14px;
 border:1px solid #ddd;
 font-size:15px;
 font-family:'Poppins';
+}
+
+textarea{
+min-height:120px;
+resize:none;
 }
 
 .submit-btn{
@@ -308,6 +347,17 @@ color:#ff7a00;
 }
 
 /* =========================
+FOOTER
+========================= */
+
+footer{
+padding:40px;
+text-align:center;
+background:white;
+margin-top:50px;
+}
+
+/* =========================
 ANIMATION
 ========================= */
 
@@ -322,12 +372,6 @@ transform:translateY(0);
 }
 }
 
-@keyframes float{
-0%{transform:translateY(0)}
-50%{transform:translateY(-15px)}
-100%{transform:translateY(0)}
-}
-
 /* =========================
 MOBILE
 ========================= */
@@ -340,11 +384,12 @@ text-align:center;
 }
 
 .hero-text h1{
-font-size:50px;
+font-size:48px;
 }
 
-header{
-padding:15px 5%;
+.hero-grid img{
+width:160px;
+height:160px;
 }
 
 nav{
@@ -358,22 +403,31 @@ padding:110px 5%;
 }
 
 </style>
+
 </head>
 
 <body>
 
 <header>
 
+<div class="logo-area">
+
+<img src="logo.png" class="site-logo">
+
 <div class="logo-text">
 Manam Crafts
 </div>
 
+</div>
+
 <nav>
+
 <a onclick="go('home')">Home</a>
 <a onclick="go('founder')">Founder</a>
 <a onclick="go('products')">Products</a>
 <a onclick="go('order')">Order</a>
 <a onclick="go('track')">Track</a>
+
 </nav>
 
 </header>
@@ -390,8 +444,16 @@ Crafted with <span>love</span>
 
 <p>
 Premium handmade crochet and pipe cleaner creations made with care, creativity and emotion.
-Every gift carries a personal touch from Manam Crafts.
+Every gift is made just for you.
 </p>
+
+<div class="hero-points">
+
+✨ Customisation Available<br>
+🎁 Return Gifts Available<br>
+🛍️ Bulk Orders Accepted
+
+</div>
 
 <div class="hero-buttons">
 
@@ -409,7 +471,17 @@ Order Now
 
 <div class="hero-image">
 
-<img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1200&auto=format&fit=crop">
+<div class="hero-grid">
+
+<img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?q=80&w=1200&auto=format&fit=crop">
+
+</div>
 
 </div>
 
@@ -428,19 +500,30 @@ Founder Message
 <h3>English</h3>
 
 <p>
-Every creation at Manam Crafts is handmade with patience, creativity and love.
-We believe handmade gifts carry emotions that machines never can.
-Thank you for supporting our dream and journey.
+Every piece at Manam Crafts is handmade with love, patience and care.
+What started as a small passion slowly became a dream to create meaningful handmade gifts for every special moment.
+
+From crochet creations to pipe cleaner bouquets, every order is made just for you.
+
+We also take custom orders, return gifts and bulk event orders with personalisation.
+
+Thank you for supporting handmade artistry ❤️
 </p>
 
-<br>
+<br><br>
 
 <h3>தமிழ்</h3>
 
 <p>
-Manam Crafts இல் உருவாக்கப்படும் ஒவ்வொரு பொருளும் அன்பும் பொறுமையும் கலந்த கைவினைப் படைப்பு.
-உங்கள் ஆதரவு எங்கள் சிறிய கனவை வளர்க்கிறது.
-மனமார்ந்த நன்றி.
+Manam Crafts இல் உருவாகும் ஒவ்வொரு பொருளும் அன்பும் பொறுமையும் கலந்த கைவினைப் படைப்பு.
+
+ஒரு சிறிய ஆர்வமாக தொடங்கியது இன்று உங்கள் சிறப்பு தருணங்களுக்கு மனதார செய்யப்பட்ட பரிசுகளாக மாறியுள்ளது.
+
+Crochet creations முதல் pipe cleaner bouquets வரை ஒவ்வொன்றும் உங்களுக்காகவே தனிப்பட்ட முறையில் தயாரிக்கப்படுகிறது.
+
+Custom orders, return gifts மற்றும் bulk event orders கூட ஏற்கப்படுகின்றன.
+
+எங்கள் சிறிய கனவிற்கு ஆதரவு அளிப்பதற்கு மனமார்ந்த நன்றி ❤️
 </p>
 
 </div>
@@ -472,6 +555,12 @@ Place Order
 <input id="name" placeholder="Your Name">
 
 <input id="phone" placeholder="Mobile Number">
+
+<input id="city" placeholder="City">
+
+<textarea id="address" placeholder="Address"></textarea>
+
+<input id="pincode" placeholder="Pincode">
 
 <select id="product" onchange="selectProduct()"></select>
 
@@ -529,25 +618,27 @@ Track
 
 </section>
 
+<footer>
+
+<h3>Manam Crafts ❤️</h3>
+
+<p style="margin-top:10px">
+Handmade with love • Crafted just for you
+</p>
+
+</footer>
+
 <script>
 
 const BASE_URL =
-'https://script.google.com/macros/s/AKfycbzFeZet_qirjJBMEohDEIYS6rtUDchOtjNB7mXGibDsAAu_uE7qeYxjkMhs9u7-ldLd/exec';
+'https://script.google.com/macros/s/AKfycbz6Qvn7O6AK54UhY15J-5fMhcGdkscs8j-Ft24BFqD-jo7yKu2wUaLejMTJYlMM-buI/exec';
 
 let PRODUCTS = [];
-
-/* =========================
-NAVIGATION
-========================= */
 
 function go(id){
 document.getElementById(id)
 .scrollIntoView({behavior:'smooth'});
 }
-
-/* =========================
-LOAD PRODUCTS
-========================= */
 
 function loadProducts(){
 
@@ -568,7 +659,7 @@ PRODUCTS = data.products;
 let html = '';
 
 let options =
-'<option value=\"\">Select Product</option>';
+'<option value="">Select Product</option>';
 
 PRODUCTS.forEach(p=>{
 
@@ -577,7 +668,7 @@ html += `
 
 <img src="${
 p.image ||
-'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1200&auto=format&fit=crop'
+'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1200&auto=format&fit=crop'
 }">
 
 <div class="card-body">
@@ -615,10 +706,6 @@ document.getElementById('product').innerHTML = options;
 
 }
 
-/* =========================
-QUICK ORDER
-========================= */
-
 function quickOrder(name){
 
 go('order');
@@ -628,10 +715,6 @@ document.getElementById('product').value = name;
 selectProduct();
 
 }
-
-/* =========================
-SELECT PRODUCT
-========================= */
 
 function selectProduct(){
 
@@ -652,10 +735,6 @@ calculate();
 
 }
 
-/* =========================
-CALCULATE
-========================= */
-
 function calculate(){
 
 const qty =
@@ -674,10 +753,6 @@ total;
 
 }
 
-/* =========================
-COUPON
-========================= */
-
 function applyCoupon(){
 
 const code =
@@ -686,14 +761,19 @@ document.getElementById('coupon').value;
 const product =
 document.getElementById('product').value;
 
+const amount =
+document.getElementById('amount').value;
+
 const script=document.createElement('script');
 
 script.src =
 BASE_URL +
 '?action=coupon&code=' +
-code +
+encodeURIComponent(code) +
 '&product=' +
-product +
+encodeURIComponent(product) +
+'&amount=' +
+amount +
 '&callback=couponResult';
 
 document.body.appendChild(script);
@@ -718,7 +798,7 @@ discount;
 document.getElementById('finalTotal').value =
 finalTotal;
 
-alert('Coupon Applied Successfully');
+alert('Coupon Applied Successfully ❤️');
 
 }
 else{
@@ -729,10 +809,6 @@ alert('Invalid Coupon');
 
 }
 
-/* =========================
-PLACE ORDER
-========================= */
-
 function placeOrder(){
 
 const customerName =
@@ -740,6 +816,15 @@ document.getElementById('name').value;
 
 const customerPhone =
 document.getElementById('phone').value;
+
+const city =
+document.getElementById('city').value;
+
+const address =
+document.getElementById('address').value;
+
+const pincode =
+document.getElementById('pincode').value;
 
 const selectedProduct =
 document.getElementById('product').value;
@@ -757,13 +842,24 @@ const form = new URLSearchParams();
 
 form.append('name', customerName);
 form.append('phone', customerPhone);
+form.append('city', city);
+form.append('address', address);
+form.append('pincode', pincode);
+
 form.append('product', selectedProduct);
+
 form.append('qty', document.getElementById('qty').value);
+
 form.append('price', document.getElementById('price').value);
+
 form.append('total', document.getElementById('amount').value);
+
 form.append('coupon', document.getElementById('coupon').value);
+
 form.append('discount', document.getElementById('discount').value);
+
 form.append('finalTotal', document.getElementById('finalTotal').value);
+
 form.append('paymentRef', document.getElementById('paymentRef').value);
 
 fetch(BASE_URL,{
@@ -777,6 +873,9 @@ const msg = `
 🛍️ New Order
 
 Order ID: ${d.orderId}
+
+Customer:
+${customerName}
 
 Product:
 ${selectedProduct}
@@ -800,6 +899,9 @@ d.orderId
 
 document.getElementById('name').value='';
 document.getElementById('phone').value='';
+document.getElementById('city').value='';
+document.getElementById('address').value='';
+document.getElementById('pincode').value='';
 document.getElementById('qty').value='1';
 document.getElementById('coupon').value='';
 document.getElementById('discount').value='';
@@ -808,10 +910,6 @@ document.getElementById('paymentRef').value='';
 });
 
 }
-
-/* =========================
-TRACK ORDER
-========================= */
 
 function trackOrder(){
 
@@ -823,7 +921,7 @@ const script=document.createElement('script');
 script.src =
 BASE_URL +
 '?action=track&orderId=' +
-id +
+encodeURIComponent(id) +
 '&callback=showTrack';
 
 document.body.appendChild(script);
@@ -846,10 +944,6 @@ document.getElementById('trackResult').innerHTML =
 }
 
 }
-
-/* =========================
-INIT
-========================= */
 
 loadProducts();
 
