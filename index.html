@@ -30,9 +30,7 @@ color:#333;
 overflow-x:hidden;
 }
 
-/* =========================
-HEADER
-========================= */
+/* ================= HEADER ================= */
 
 header{
 position:fixed;
@@ -55,15 +53,15 @@ gap:12px;
 }
 
 .site-logo{
-width:52px;
-height:52px;
+width:60px;
+height:60px;
 object-fit:cover;
 border-radius:50%;
 box-shadow:0 5px 15px rgba(0,0,0,0.12);
 }
 
 .logo-text{
-font-size:28px;
+font-size:32px;
 font-weight:700;
 background:linear-gradient(90deg,#ff7a00,#ffb347);
 -webkit-background-clip:text;
@@ -71,36 +69,50 @@ background:linear-gradient(90deg,#ff7a00,#ffb347);
 }
 
 nav a{
-margin-left:25px;
+margin-left:28px;
 text-decoration:none;
 color:#333;
-font-weight:500;
+font-weight:600;
 transition:0.3s;
 cursor:pointer;
+font-size:17px;
 }
 
 nav a:hover{
 color:#ff7a00;
 }
 
-/* =========================
-SECTION
-========================= */
+/* ================= CONTACT BAR ================= */
+
+.top-contact{
+margin-top:95px;
+text-align:center;
+padding:14px;
+font-size:15px;
+background:#fff;
+box-shadow:0 5px 20px rgba(0,0,0,0.04);
+}
+
+.top-contact a{
+text-decoration:none;
+color:#ff7a00;
+font-weight:600;
+}
+
+/* ================= SECTION ================= */
 
 section{
 padding:120px 7%;
 min-height:100vh;
 }
 
-/* =========================
-HERO
-========================= */
+/* ================= HERO ================= */
 
 .hero{
 display:flex;
 align-items:center;
 justify-content:space-between;
-gap:60px;
+gap:70px;
 }
 
 .hero-text{
@@ -109,9 +121,10 @@ animation:fadeUp 1s ease;
 }
 
 .hero-text h1{
-font-size:68px;
-line-height:1.1;
-margin-bottom:20px;
+font-size:84px;
+line-height:1;
+margin-bottom:25px;
+font-weight:700;
 }
 
 .hero-text h1 span{
@@ -121,30 +134,31 @@ background:linear-gradient(90deg,#ff7a00,#ffb347);
 }
 
 .hero-text p{
-font-size:19px;
+font-size:22px;
 line-height:1.8;
 opacity:0.75;
-max-width:620px;
+max-width:650px;
 }
 
 .hero-points{
-margin-top:25px;
-font-size:18px;
-line-height:2;
+margin-top:35px;
+font-size:22px;
+line-height:2.2;
 color:#555;
 }
 
 .hero-buttons{
-margin-top:35px;
+margin-top:40px;
+display:flex;
+gap:18px;
 }
 
 .hero-buttons button{
-padding:15px 28px;
+padding:18px 34px;
 border:none;
-border-radius:14px;
-font-size:16px;
+border-radius:16px;
+font-size:18px;
 font-weight:600;
-margin-right:12px;
 cursor:pointer;
 transition:0.3s;
 }
@@ -157,7 +171,6 @@ box-shadow:0 10px 25px rgba(255,122,0,0.3);
 
 .secondary-btn{
 background:white;
-border:1px solid #eee;
 }
 
 .hero-buttons button:hover{
@@ -173,55 +186,84 @@ justify-content:center;
 .hero-grid{
 display:grid;
 grid-template-columns:repeat(2,1fr);
-gap:15px;
+gap:18px;
 }
 
 .hero-grid img{
-width:220px;
-height:220px;
+width:240px;
+height:240px;
 object-fit:cover;
-border-radius:24px;
-box-shadow:0 15px 35px rgba(0,0,0,0.15);
+border-radius:28px;
+box-shadow:0 20px 40px rgba(0,0,0,0.15);
 transition:0.4s;
 }
 
 .hero-grid img:hover{
-transform:translateY(-8px) scale(1.03);
+transform:translateY(-10px) scale(1.03);
 }
 
-/* =========================
-FOUNDER
-========================= */
-
-.founder-box{
-background:rgba(255,255,255,0.8);
-padding:45px;
-border-radius:30px;
-box-shadow:0 10px 40px rgba(0,0,0,0.08);
-line-height:2;
-font-size:17px;
-backdrop-filter:blur(10px);
-}
-
-/* =========================
-PRODUCTS
-========================= */
+/* ================= TITLES ================= */
 
 .section-title{
-font-size:42px;
-margin-bottom:20px;
+font-size:48px;
+margin-bottom:30px;
 }
+
+/* ================= FOUNDER ================= */
+
+.founder-box{
+background:rgba(255,255,255,0.82);
+padding:50px;
+border-radius:35px;
+backdrop-filter:blur(12px);
+box-shadow:0 15px 45px rgba(0,0,0,0.08);
+line-height:2;
+font-size:18px;
+position:relative;
+overflow:hidden;
+}
+
+.founder-box::before{
+content:"🧶";
+position:absolute;
+font-size:130px;
+opacity:0.05;
+right:20px;
+top:10px;
+}
+
+.founder-box::after{
+content:"🌸";
+position:absolute;
+font-size:110px;
+opacity:0.05;
+left:20px;
+bottom:10px;
+}
+
+.quote-box{
+margin-top:35px;
+padding:25px;
+background:rgba(255,255,255,0.7);
+border-radius:22px;
+line-height:2;
+backdrop-filter:blur(10px);
+box-shadow:0 10px 30px rgba(0,0,0,0.05);
+font-style:italic;
+}
+
+/* ================= PRODUCTS ================= */
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:30px;
+grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
+gap:35px;
 margin-top:40px;
 }
 
 .card{
-background:rgba(255,255,255,0.7);
-border-radius:28px;
+background:rgba(255,255,255,0.78);
+border-radius:30px;
 overflow:hidden;
 backdrop-filter:blur(12px);
 box-shadow:0 15px 40px rgba(0,0,0,0.08);
@@ -234,39 +276,40 @@ transform:translateY(-10px);
 
 .card img{
 width:100%;
-height:280px;
+height:300px;
 object-fit:cover;
 }
 
 .card-body{
-padding:20px;
+padding:22px;
 }
 
 .card-body h3{
 margin-bottom:10px;
+font-size:24px;
 }
 
 .card-body p{
 opacity:0.7;
-font-size:14px;
-line-height:1.6;
+font-size:15px;
+line-height:1.7;
 }
 
 .price{
-font-size:24px;
+font-size:28px;
 font-weight:700;
-margin:18px 0;
+margin:20px 0;
 color:#ff7a00;
 }
 
 .order-btn{
 width:100%;
-padding:14px;
+padding:15px;
 border:none;
-border-radius:12px;
+border-radius:14px;
 background:#ff7a00;
 color:white;
-font-size:16px;
+font-size:17px;
 font-weight:600;
 cursor:pointer;
 transition:0.3s;
@@ -276,25 +319,23 @@ transition:0.3s;
 transform:scale(1.03);
 }
 
-/* =========================
-ORDER BOX
-========================= */
+/* ================= ORDER ================= */
 
 .order-box{
-max-width:850px;
+max-width:900px;
 margin:auto;
 background:rgba(255,255,255,0.82);
-padding:45px;
-border-radius:30px;
+padding:50px;
+border-radius:35px;
 backdrop-filter:blur(12px);
 box-shadow:0 15px 45px rgba(0,0,0,0.08);
 }
 
 input,select,textarea{
 width:100%;
-padding:16px;
+padding:17px;
 margin:12px 0;
-border-radius:14px;
+border-radius:15px;
 border:1px solid #ddd;
 font-size:15px;
 font-family:'Poppins';
@@ -330,9 +371,7 @@ border-radius:25px;
 box-shadow:0 10px 25px rgba(0,0,0,0.1);
 }
 
-/* =========================
-TRACK
-========================= */
+/* ================= TRACK ================= */
 
 .track-box{
 max-width:650px;
@@ -341,25 +380,25 @@ margin:auto;
 
 #trackResult{
 margin-top:20px;
-font-size:22px;
+font-size:24px;
 font-weight:600;
 color:#ff7a00;
 }
 
-/* =========================
-FOOTER
-========================= */
+/* ================= FOOTER ================= */
 
 footer{
-padding:40px;
+padding:50px;
 text-align:center;
 background:white;
-margin-top:50px;
 }
 
-/* =========================
-ANIMATION
-========================= */
+footer h3{
+font-size:32px;
+margin-bottom:10px;
+}
+
+/* ================= ANIMATION ================= */
 
 @keyframes fadeUp{
 from{
@@ -372,9 +411,7 @@ transform:translateY(0);
 }
 }
 
-/* =========================
-MOBILE
-========================= */
+/* ================= MOBILE ================= */
 
 @media(max-width:900px){
 
@@ -384,12 +421,17 @@ text-align:center;
 }
 
 .hero-text h1{
-font-size:48px;
+font-size:56px;
 }
 
 .hero-grid img{
 width:160px;
 height:160px;
+}
+
+.hero-buttons{
+justify-content:center;
+flex-wrap:wrap;
 }
 
 nav{
@@ -398,6 +440,11 @@ display:none;
 
 section{
 padding:110px 5%;
+}
+
+.top-contact{
+font-size:13px;
+line-height:2;
 }
 
 }
@@ -431,6 +478,26 @@ Manam Crafts
 </nav>
 
 </header>
+
+<div class="top-contact">
+
+📸 Instagram:
+<a href="https://instagram.com/manam.crafts" target="_blank">
+@manam.crafts
+</a>
+
+&nbsp;&nbsp;|&nbsp;&nbsp;
+
+🌐 manamcrafts.com
+
+&nbsp;&nbsp;|&nbsp;&nbsp;
+
+📱 WhatsApp:
+<a href="https://wa.me/919894122166" target="_blank">
+9894122166
+</a>
+
+</div>
 
 <!-- HERO -->
 
@@ -473,13 +540,13 @@ Order Now
 
 <div class="hero-grid">
 
+<img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1200&auto=format&fit=crop">
+
 <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1200&auto=format&fit=crop">
-
-<img src="https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=1200&auto=format&fit=crop">
-
-<img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=1200&auto=format&fit=crop">
-
-<img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?q=80&w=1200&auto=format&fit=crop">
 
 </div>
 
@@ -497,34 +564,42 @@ Founder Message
 
 <div class="founder-box">
 
-<h3>English</h3>
+<h2 style="margin-bottom:25px">
+Founder’s Message 🌸✨
+</h2>
 
 <p>
-Every piece at Manam Crafts is handmade with love, patience and care.
-What started as a small passion slowly became a dream to create meaningful handmade gifts for every special moment.
+“Every piece we create is more than craft — it’s a heartfelt expression.
+At Manam Crafts, our pipe-cleaner and crochet products are lovingly handmade 🧶, shaped with care, and designed with good intention 💖.
+Each flower, heart, and detail is made just for you — a reminder that beauty can be simple, thoughtful, and full of love.”
+</p>
 
-From crochet creations to pipe cleaner bouquets, every order is made just for you.
+<br>
 
-We also take custom orders, return gifts and bulk event orders with personalisation.
-
-Thank you for supporting handmade artistry ❤️
+<p>
+“From our hands to yours, may these creations bring joy, warmth, and a touch of handmade magic into your life ✨🌹.”
 </p>
 
 <br><br>
 
-<h3>தமிழ்</h3>
-
-<p>
-Manam Crafts இல் உருவாகும் ஒவ்வொரு பொருளும் அன்பும் பொறுமையும் கலந்த கைவினைப் படைப்பு.
-
-ஒரு சிறிய ஆர்வமாக தொடங்கியது இன்று உங்கள் சிறப்பு தருணங்களுக்கு மனதார செய்யப்பட்ட பரிசுகளாக மாறியுள்ளது.
-
-Crochet creations முதல் pipe cleaner bouquets வரை ஒவ்வொன்றும் உங்களுக்காகவே தனிப்பட்ட முறையில் தயாரிக்கப்படுகிறது.
-
-Custom orders, return gifts மற்றும் bulk event orders கூட ஏற்கப்படுகின்றன.
-
-எங்கள் சிறிய கனவிற்கு ஆதரவு அளிப்பதற்கு மனமார்ந்த நன்றி ❤️
+<p style="font-weight:600">
+— With gratitude,<br>
+Radha (Founder, Manam Crafts) 🙏💛
 </p>
+
+<div class="quote-box">
+
+🌸 “In the tapestry of life, crochet adds the colorful threads.” – Isabella Lee
+
+<br><br>
+
+✨ “Pipe cleaners may be simple, but in the right hands they become pure magic.”
+
+<br><br>
+
+💖 “Handmade with love, shaped with intention, gifted with joy.”
+
+</div>
 
 </div>
 
@@ -566,7 +641,7 @@ Place Order
 
 <input id="price" placeholder="Price" readonly>
 
-<input id="qty" type="number" value="1" placeholder="Quantity" oninput="calculate()">
+<input id="qty" type="number" value="1" oninput="calculate()">
 
 <input id="amount" placeholder="Amount" readonly>
 
@@ -622,8 +697,14 @@ Track
 
 <h3>Manam Crafts ❤️</h3>
 
-<p style="margin-top:10px">
+<p>
 Handmade with love • Crafted just for you
+</p>
+
+<br>
+
+<p>
+Instagram: @manam.crafts
 </p>
 
 </footer>
@@ -668,12 +749,12 @@ html += `
 
 <img src="${
 p.image ||
-'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1200&auto=format&fit=crop'
+'https://images.unsplash.com/photo-1617038220319-276d3cfab638?q=80&w=1200&auto=format&fit=crop'
 }">
 
 <div class="card-body">
 
-<h3>${p.name}</h3>
+<h3>${p.emoji || '🧶'} ${p.name}</h3>
 
 <p>${p.notes || ''}</p>
 
@@ -845,21 +926,13 @@ form.append('phone', customerPhone);
 form.append('city', city);
 form.append('address', address);
 form.append('pincode', pincode);
-
 form.append('product', selectedProduct);
-
 form.append('qty', document.getElementById('qty').value);
-
 form.append('price', document.getElementById('price').value);
-
 form.append('total', document.getElementById('amount').value);
-
 form.append('coupon', document.getElementById('coupon').value);
-
 form.append('discount', document.getElementById('discount').value);
-
 form.append('finalTotal', document.getElementById('finalTotal').value);
-
 form.append('paymentRef', document.getElementById('paymentRef').value);
 
 fetch(BASE_URL,{
@@ -896,16 +969,6 @@ alert(
 'Thank you for your order ❤️\n\nYour Order ID: ' +
 d.orderId
 );
-
-document.getElementById('name').value='';
-document.getElementById('phone').value='';
-document.getElementById('city').value='';
-document.getElementById('address').value='';
-document.getElementById('pincode').value='';
-document.getElementById('qty').value='1';
-document.getElementById('coupon').value='';
-document.getElementById('discount').value='';
-document.getElementById('paymentRef').value='';
 
 });
 
