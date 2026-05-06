@@ -1,35 +1,91 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Manam Crafts</title>
 
 <style>
+
 body {
   margin:0;
-  font-family:'Segoe UI';
-  background:linear-gradient(135deg,#fff6ec,#fde6d2);
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg,#fff6ec,#fde6d2);
+  color:#333;
 }
 
+/* HEADER */
 header {
   position:fixed;
   width:100%;
-  backdrop-filter:blur(10px);
-  background:rgba(255,255,255,0.6);
-  padding:15px 40px;
+  top:0;
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.7);
   display:flex;
   justify-content:space-between;
+  padding:15px 40px;
+  z-index:1000;
 }
 
 nav a {
   margin-left:20px;
   cursor:pointer;
+  font-weight:500;
 }
 
+/* SECTION */
 section {
   min-height:100vh;
   padding:120px 60px;
 }
 
+/* HERO */
+.hero {
+  text-align:center;
+}
+
+.logo {
+  width:160px;
+  margin-bottom:20px;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform:translateY(0px);}
+  50% { transform:translateY(-10px);}
+  100% { transform:translateY(0px);}
+}
+
+.hero h1 {
+  font-size:48px;
+  margin-bottom:10px;
+}
+
+.hero p {
+  font-size:18px;
+  opacity:0.7;
+}
+
+/* CATEGORY */
+.categories {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.cat-card {
+  padding:30px;
+  border-radius:20px;
+  background:rgba(255,255,255,0.6);
+  backdrop-filter:blur(10px);
+  text-align:center;
+  transition:0.3s;
+}
+
+.cat-card:hover {
+  transform:translateY(-5px);
+}
+
+/* PRODUCTS */
 .grid {
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -39,13 +95,13 @@ section {
 .card {
   background:rgba(255,255,255,0.6);
   backdrop-filter:blur(10px);
-  padding:10px;
-  border-radius:15px;
+  border-radius:20px;
+  overflow:hidden;
   transition:0.3s;
 }
 
 .card:hover {
-  transform:translateY(-5px);
+  transform:translateY(-8px);
 }
 
 .card img {
@@ -54,73 +110,102 @@ section {
   object-fit:cover;
 }
 
+.card-body {
+  padding:15px;
+}
+
+.price {
+  color:#ff7a00;
+  font-weight:bold;
+}
+
 button {
   width:100%;
   padding:10px;
+  margin-top:10px;
+  border:none;
   background:#ff7a00;
   color:white;
-  border:none;
   cursor:pointer;
+  border-radius:8px;
 }
 
+/* FORM */
 input {
   width:100%;
   padding:10px;
   margin:10px 0;
 }
+
 </style>
 </head>
 
 <body>
 
 <header>
-  <div><b>Manam Crafts</b></div>
+  <b>Manam Crafts</b>
   <nav>
     <a onclick="go('home')">Home</a>
+    <a onclick="go('categories')">Categories</a>
     <a onclick="go('products')">Products</a>
     <a onclick="go('order')">Order</a>
     <a onclick="go('track')">Track</a>
   </nav>
 </header>
 
-<section id="home">
+<!-- HERO -->
+<section id="home" class="hero">
+  <img src="logo.png" class="logo">
   <h1>Crafted with Love ❤️</h1>
+  <p>Handmade crochet & pipe cleaner creations</p>
 </section>
 
+<!-- CATEGORY -->
+<section id="categories">
+  <h2>Our Creations</h2>
+  <div class="categories">
+    <div class="cat-card">🧶 Crochet</div>
+    <div class="cat-card">🌸 Pipe Cleaner</div>
+    <div class="cat-card">🎁 Custom Gifts</div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
 <section id="products">
   <h2>Products</h2>
   <div id="products-container" class="grid"></div>
 </section>
 
+<!-- ORDER -->
 <section id="order">
   <h2>Place Order</h2>
   <input id="name" placeholder="Name">
   <input id="phone" placeholder="Phone">
   <input id="product" placeholder="Product">
-  <input id="qty" placeholder="Quantity" oninput="calc()">
+  <input id="qty" placeholder="Qty" oninput="calc()">
   <input id="price" placeholder="Price">
   <input id="total" placeholder="Total">
   <button onclick="placeOrder()">Submit</button>
 </section>
 
+<!-- TRACK -->
 <section id="track">
   <h2>Track Order</h2>
-  <input id="trackId" placeholder="Enter Order ID">
+  <input id="trackId" placeholder="Order ID">
   <button onclick="trackOrder()">Track</button>
   <div id="trackResult"></div>
 </section>
 
 <script>
 
-// ✅ YOUR NEW APPS SCRIPT URL (UPDATED)
 const BASE_URL = "https://script.google.com/macros/s/AKfycbyVIDsjzGYpWSo9Vpp5W1hEqp3PzOnwYXqtldQwxu04YI8TlBVeEqpRUM8hpU4-SIEE/exec";
 
-// NAVIGATION
+// NAV
 function go(id){
   document.getElementById(id).scrollIntoView({behavior:'smooth'});
 }
 
-// LOAD PRODUCTS (JSONP)
+// LOAD PRODUCTS
 function loadProducts(){
   const script = document.createElement("script");
   script.src = BASE_URL + "?action=products&callback=renderProducts";
@@ -128,85 +213,68 @@ function loadProducts(){
 }
 
 function renderProducts(data){
-  let html = "";
-
-  if(!data || data.status !== "success"){
-    document.getElementById("products-container").innerHTML = "<p>No products found</p>";
-    return;
-  }
-
+  let html="";
   data.products.forEach(p=>{
-    html += `
+    html+=`
     <div class="card">
-      <img src="${p.image || 'https://via.placeholder.com/300'}"
-           onerror="this.src='https://via.placeholder.com/300'">
-      <h4>${p.name}</h4>
-      <p>₹${p.price}</p>
-      <button onclick="select('${p.name}',${p.price})">Order</button>
+      <img src="${p.image || 'https://via.placeholder.com/300'}">
+      <div class="card-body">
+        <h4>${p.name}</h4>
+        <div class="price">₹${p.price}</div>
+        <button onclick="select('${p.name}',${p.price})">Order</button>
+      </div>
     </div>`;
   });
-
-  document.getElementById("products-container").innerHTML = html;
+  document.getElementById("products-container").innerHTML=html;
 }
 
-// SELECT PRODUCT
-function select(name, price){
+// SELECT
+function select(n,p){
   go('order');
-  document.getElementById("product").value = name;
-  document.getElementById("price").value = price;
+  product.value=n;
+  price.value=p;
 }
 
-// CALCULATE TOTAL
+// CALC
 function calc(){
-  const q = document.getElementById("qty").value || 0;
-  const p = document.getElementById("price").value || 0;
-  document.getElementById("total").value = q * p;
+  total.value=qty.value*price.value;
 }
 
-// PLACE ORDER
+// ORDER
 function placeOrder(){
-  const form = new URLSearchParams();
-
-  form.append("name", name.value);
-  form.append("phone", phone.value);
-  form.append("product", product.value);
-  form.append("qty", qty.value);
-  form.append("price", price.value);
-  form.append("total", total.value);
+  const form=new URLSearchParams();
+  form.append("name",name.value);
+  form.append("phone",phone.value);
+  form.append("product",product.value);
+  form.append("qty",qty.value);
+  form.append("price",price.value);
+  form.append("total",total.value);
 
   fetch(BASE_URL,{method:"POST",body:form})
   .then(r=>r.json())
   .then(d=>{
-    const msg = `🛍️ New Order!
-ID: ${d.orderId}
-Name: ${name.value}
-Phone: ${phone.value}
-Product: ${product.value}
-Qty: ${qty.value}
-Total: ₹${total.value}`;
+    const msg=`New Order!
+ID:${d.orderId}
+${product.value}`;
 
-    
-    // WhatsApp alert to YOU
-    "https://wa.me/919894122166?text=" + encodeURIComponent(msg)
-
-    alert("Order Placed! ID: "+d.orderId);
+    window.open("https://wa.me/919894122166?text="+encodeURIComponent(msg));
+    alert("Order ID: "+d.orderId);
   });
 }
 
-// TRACK ORDER
+// TRACK
 function trackOrder(){
-  const script = document.createElement("script");
-  script.src = BASE_URL + "?action=track&orderId=" + trackId.value + "&callback=showTrack";
+  const script=document.createElement("script");
+  script.src=BASE_URL+"?action=track&orderId="+trackId.value+"&callback=showTrack";
   document.body.appendChild(script);
 }
 
-function showTrack(data){
-  trackResult.innerHTML = data.status==="success"
-  ? "Status: "+data.orderStatus
-  : "Order not found";
+function showTrack(d){
+  trackResult.innerHTML = d.status==="success"
+  ? "Status: "+d.orderStatus
+  : "Not found";
 }
 
-// INIT
 loadProducts();
 
 </script>
