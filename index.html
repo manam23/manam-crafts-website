@@ -1,180 +1,360 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Manam Crafts</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-/* RESET */
-*{margin:0;padding:0;box-sizing:border-box}
-
-body{
-  font-family:'Segoe UI',sans-serif;
-  background:linear-gradient(135deg,#fff6ec,#fde6d2);
-  color:#333;
-  scroll-behavior:smooth;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-/* HEADER */
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:linear-gradient(135deg,#fff7f0,#fde7d1);
+color:#333;
+overflow-x:hidden;
+}
+
+/* =========================
+HEADER
+========================= */
+
 header{
-  position:fixed;
-  width:100%;
-  top:0;
-  background:rgba(255,255,255,0.7);
-  backdrop-filter:blur(12px);
-  display:flex;
-  justify-content:space-between;
-  padding:15px 40px;
-  z-index:1000;
+position:fixed;
+top:0;
+width:100%;
+padding:18px 7%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(255,255,255,0.7);
+backdrop-filter:blur(14px);
+z-index:999;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
+}
+
+.logo-text{
+font-size:28px;
+font-weight:700;
+background:linear-gradient(90deg,#ff7a00,#ffb347);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
 nav a{
-  margin-left:20px;
-  cursor:pointer;
-  font-weight:500;
+margin-left:25px;
+text-decoration:none;
+color:#333;
+font-weight:500;
+transition:0.3s;
+cursor:pointer;
 }
 
-/* SECTION */
+nav a:hover{
+color:#ff7a00;
+}
+
+/* =========================
+SECTION
+========================= */
+
 section{
-  min-height:100vh;
-  padding:120px 60px;
+padding:120px 7%;
+min-height:100vh;
 }
 
-/* HERO */
+/* =========================
+HERO
+========================= */
+
 .hero{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:60px;
 }
 
-.hero-inner{
-  max-width:700px;
-  animation:fadeUp 1s ease;
+.hero-text{
+flex:1;
+animation:fadeUp 1s ease;
 }
 
-.logo{
-  width:150px;
-  margin-bottom:20px;
-  filter:drop-shadow(0 10px 25px rgba(0,0,0,0.15));
+.hero-text h1{
+font-size:68px;
+line-height:1.1;
+margin-bottom:20px;
 }
 
-.hero h1{
-  font-size:54px;
-  line-height:1.2;
+.hero-text h1 span{
+background:linear-gradient(90deg,#ff7a00,#ffb347);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
-.highlight{
-  color:#ff7a00;
+.hero-text p{
+font-size:19px;
+line-height:1.8;
+opacity:0.75;
+max-width:600px;
 }
 
-.hero p{
-  margin-top:15px;
-  font-size:18px;
-  opacity:0.7;
+.hero-buttons{
+margin-top:35px;
 }
 
 .hero-buttons button{
-  margin:12px;
-  padding:14px 24px;
-  border:none;
-  border-radius:12px;
-  background:#ff7a00;
-  color:white;
-  cursor:pointer;
-  transition:0.3s;
+padding:15px 28px;
+border:none;
+border-radius:14px;
+font-size:16px;
+font-weight:600;
+margin-right:12px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.primary-btn{
+background:#ff7a00;
+color:white;
+box-shadow:0 10px 25px rgba(255,122,0,0.3);
+}
+
+.secondary-btn{
+background:white;
+border:1px solid #eee;
 }
 
 .hero-buttons button:hover{
-  transform:translateY(-3px);
+transform:translateY(-5px);
 }
 
-.outline{
-  background:transparent;
-  border:1px solid #ff7a00;
-  color:#ff7a00;
+.hero-image{
+flex:1;
+display:flex;
+justify-content:center;
 }
 
-/* CATEGORY */
-.categories{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:25px;
+.hero-image img{
+width:100%;
+max-width:450px;
+border-radius:30px;
+box-shadow:0 20px 50px rgba(0,0,0,0.15);
+animation:float 4s ease-in-out infinite;
 }
 
-.cat-card{
-  padding:40px;
-  border-radius:25px;
-  background:rgba(255,255,255,0.6);
-  backdrop-filter:blur(10px);
-  text-align:center;
-  font-size:20px;
-  transition:0.3s;
+/* =========================
+FOUNDER
+========================= */
+
+.founder-box{
+background:rgba(255,255,255,0.8);
+padding:45px;
+border-radius:30px;
+box-shadow:0 10px 40px rgba(0,0,0,0.08);
+line-height:2;
+font-size:17px;
+backdrop-filter:blur(10px);
 }
 
-.cat-card:hover{
-  transform:translateY(-6px);
+/* =========================
+PRODUCTS
+========================= */
+
+.section-title{
+font-size:42px;
+margin-bottom:20px;
 }
 
-/* PRODUCTS */
 .grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:25px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+margin-top:40px;
 }
 
 .card{
-  background:rgba(255,255,255,0.6);
-  backdrop-filter:blur(12px);
-  border-radius:20px;
-  overflow:hidden;
-  transition:0.3s;
+background:rgba(255,255,255,0.7);
+border-radius:28px;
+overflow:hidden;
+backdrop-filter:blur(12px);
+box-shadow:0 15px 40px rgba(0,0,0,0.08);
+transition:0.4s;
 }
 
 .card:hover{
-  transform:translateY(-10px);
+transform:translateY(-10px);
 }
 
 .card img{
-  width:100%;
-  height:220px;
-  object-fit:cover;
+width:100%;
+height:280px;
+object-fit:cover;
 }
 
 .card-body{
-  padding:15px;
+padding:20px;
+}
+
+.card-body h3{
+margin-bottom:10px;
+}
+
+.card-body p{
+opacity:0.7;
+font-size:14px;
+line-height:1.6;
 }
 
 .price{
-  color:#ff7a00;
-  font-weight:bold;
+font-size:24px;
+font-weight:700;
+margin:18px 0;
+color:#ff7a00;
 }
 
-button{
-  width:100%;
-  padding:12px;
-  margin-top:10px;
-  border:none;
-  background:#ff7a00;
-  color:white;
-  cursor:pointer;
-  border-radius:8px;
+.order-btn{
+width:100%;
+padding:14px;
+border:none;
+border-radius:12px;
+background:#ff7a00;
+color:white;
+font-size:16px;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
 }
 
-/* FORM */
-input{
-  width:100%;
-  padding:12px;
-  margin:10px 0;
-  border-radius:8px;
-  border:1px solid #ddd;
+.order-btn:hover{
+transform:scale(1.03);
 }
 
-/* ANIMATION */
+/* =========================
+ORDER BOX
+========================= */
+
+.order-box{
+max-width:750px;
+margin:auto;
+background:rgba(255,255,255,0.8);
+padding:45px;
+border-radius:30px;
+backdrop-filter:blur(12px);
+box-shadow:0 15px 45px rgba(0,0,0,0.08);
+}
+
+input,select{
+width:100%;
+padding:16px;
+margin:12px 0;
+border-radius:14px;
+border:1px solid #ddd;
+font-size:15px;
+font-family:'Poppins';
+}
+
+.submit-btn{
+width:100%;
+padding:18px;
+border:none;
+border-radius:16px;
+background:#ff7a00;
+color:white;
+font-size:18px;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
+}
+
+.submit-btn:hover{
+transform:translateY(-4px);
+}
+
+.qr{
+width:240px;
+display:block;
+margin:25px auto;
+border-radius:25px;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* =========================
+TRACK
+========================= */
+
+.track-box{
+max-width:650px;
+margin:auto;
+}
+
+#trackResult{
+margin-top:20px;
+font-size:22px;
+font-weight:600;
+color:#ff7a00;
+}
+
+/* =========================
+ANIMATION
+========================= */
+
 @keyframes fadeUp{
-  from{opacity:0; transform:translateY(20px)}
-  to{opacity:1; transform:translateY(0)}
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@keyframes float{
+0%{transform:translateY(0)}
+50%{transform:translateY(-15px)}
+100%{transform:translateY(0)}
+}
+
+/* =========================
+MOBILE
+========================= */
+
+@media(max-width:900px){
+
+.hero{
+flex-direction:column;
+text-align:center;
+}
+
+.hero-text h1{
+font-size:50px;
+}
+
+header{
+padding:15px 5%;
+}
+
+nav{
+display:none;
+}
+
+section{
+padding:110px 5%;
+}
+
 }
 
 </style>
@@ -183,145 +363,493 @@ input{
 <body>
 
 <header>
-  <b>Manam Crafts</b>
-  <nav>
-    <a onclick="go('home')">Home</a>
-    <a onclick="go('categories')">Categories</a>
-    <a onclick="go('products')">Products</a>
-    <a onclick="go('order')">Order</a>
-    <a onclick="go('track')">Track</a>
-  </nav>
+
+<div class="logo-text">
+Manam Crafts
+</div>
+
+<nav>
+<a onclick="go('home')">Home</a>
+<a onclick="go('founder')">Founder</a>
+<a onclick="go('products')">Products</a>
+<a onclick="go('order')">Order</a>
+<a onclick="go('track')">Track</a>
+</nav>
+
 </header>
 
 <!-- HERO -->
+
 <section id="home" class="hero">
-  <div class="hero-inner">
-    <img src="logo.png" class="logo">
-    <h1>Crafted with <span class="highlight">love</span></h1>
-    <p>Handmade crochet & pipe cleaner creations</p>
-    <div class="hero-buttons">
-      <button onclick="go('products')">Explore Products</button>
-      <button class="outline" onclick="go('order')">Order Now</button>
-    </div>
-  </div>
+
+<div class="hero-text">
+
+<h1>
+Crafted with <span>love</span>
+</h1>
+
+<p>
+Premium handmade crochet and pipe cleaner creations made with care, creativity and emotion.
+Every gift carries a personal touch from Manam Crafts.
+</p>
+
+<div class="hero-buttons">
+
+<button class="primary-btn" onclick="go('products')">
+Explore Products
+</button>
+
+<button class="secondary-btn" onclick="go('order')">
+Order Now
+</button>
+
+</div>
+
+</div>
+
+<div class="hero-image">
+
+<img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1200&auto=format&fit=crop">
+
+</div>
+
 </section>
 
-<!-- CATEGORY -->
-<section id="categories">
-  <h2>Our Creations</h2>
-  <div class="categories">
-    <div class="cat-card">🧶 Crochet</div>
-    <div class="cat-card">🌸 Pipe Cleaner</div>
-    <div class="cat-card">🎁 Custom Gifts</div>
-  </div>
+<!-- FOUNDER -->
+
+<section id="founder">
+
+<h1 class="section-title">
+Founder Message
+</h1>
+
+<div class="founder-box">
+
+<h3>English</h3>
+
+<p>
+Every creation at Manam Crafts is handmade with patience, creativity and love.
+We believe handmade gifts carry emotions that machines never can.
+Thank you for supporting our dream and journey.
+</p>
+
+<br>
+
+<h3>தமிழ்</h3>
+
+<p>
+Manam Crafts இல் உருவாக்கப்படும் ஒவ்வொரு பொருளும் அன்பும் பொறுமையும் கலந்த கைவினைப் படைப்பு.
+உங்கள் ஆதரவு எங்கள் சிறிய கனவை வளர்க்கிறது.
+மனமார்ந்த நன்றி.
+</p>
+
+</div>
+
 </section>
 
 <!-- PRODUCTS -->
+
 <section id="products">
-  <h2>Products</h2>
-  <div id="products-container" class="grid"></div>
+
+<h1 class="section-title">
+Our Products
+</h1>
+
+<div id="products-container" class="grid"></div>
+
 </section>
 
 <!-- ORDER -->
+
 <section id="order">
-  <h2>Place Order</h2>
-  <input id="name" placeholder="Name">
-  <input id="phone" placeholder="Phone">
-  <input id="product" placeholder="Product">
-  <input id="qty" placeholder="Quantity" oninput="calc()">
-  <input id="price" placeholder="Price">
-  <input id="total" placeholder="Total">
-  <button onclick="placeOrder()">Submit</button>
+
+<h1 class="section-title">
+Place Order
+</h1>
+
+<div class="order-box">
+
+<input id="name" placeholder="Your Name">
+
+<input id="phone" placeholder="Mobile Number">
+
+<select id="product" onchange="selectProduct()"></select>
+
+<input id="price" placeholder="Price" readonly>
+
+<input id="qty" type="number" value="1" placeholder="Quantity" oninput="calculate()">
+
+<input id="amount" placeholder="Amount" readonly>
+
+<input id="coupon" placeholder="Coupon Code">
+
+<button class="order-btn" onclick="applyCoupon()">
+Apply Coupon
+</button>
+
+<input id="discount" placeholder="Discount" readonly>
+
+<input id="finalTotal" placeholder="Final Total" readonly>
+
+<h3 style="margin-top:25px;text-align:center">
+Scan & Pay
+</h3>
+
+<img src="qr.png" class="qr">
+
+<input id="paymentRef" placeholder="Payment Reference Number">
+
+<button class="submit-btn" onclick="placeOrder()">
+Submit Order
+</button>
+
+</div>
+
 </section>
 
 <!-- TRACK -->
+
 <section id="track">
-  <h2>Track Order</h2>
-  <input id="trackId" placeholder="Enter Order ID">
-  <button onclick="trackOrder()">Track</button>
-  <div id="trackResult"></div>
+
+<h1 class="section-title">
+Track Order
+</h1>
+
+<div class="track-box">
+
+<input id="trackId" placeholder="Enter Order ID">
+
+<button class="submit-btn" onclick="trackOrder()">
+Track
+</button>
+
+<div id="trackResult"></div>
+
+</div>
+
 </section>
 
 <script>
 
-const BASE_URL = "https://script.google.com/macros/s/AKfycbyVIDsjzGYpWSo9Vpp5W1hEqp3PzOnwYXqtldQwxu04YI8TlBVeEqpRUM8hpU4-SIEE/exec";
+const BASE_URL =
+'https://script.google.com/macros/s/AKfycbzFeZet_qirjJBMEohDEIYS6rtUDchOtjNB7mXGibDsAAu_uE7qeYxjkMhs9u7-ldLd/exec';
 
-// NAV
+let PRODUCTS = [];
+
+/* =========================
+NAVIGATION
+========================= */
+
 function go(id){
-  document.getElementById(id).scrollIntoView({behavior:'smooth'});
+document.getElementById(id)
+.scrollIntoView({behavior:'smooth'});
 }
 
-// PRODUCTS
+/* =========================
+LOAD PRODUCTS
+========================= */
+
 function loadProducts(){
-  const script=document.createElement("script");
-  script.src=BASE_URL+"?action=products&callback=renderProducts";
-  document.body.appendChild(script);
+
+const script=document.createElement('script');
+
+script.src=
+BASE_URL +
+'?action=products&callback=renderProducts';
+
+document.body.appendChild(script);
+
 }
 
 function renderProducts(data){
-  let html="";
-  data.products.forEach(p=>{
-    html+=`
-    <div class="card">
-      <img src="${p.image || 'https://via.placeholder.com/300'}">
-      <div class="card-body">
-        <h4>${p.name}</h4>
-        <div class="price">₹${p.price}</div>
-        <button onclick="select('${p.name}',${p.price})">Order</button>
-      </div>
-    </div>`;
-  });
-  document.getElementById("products-container").innerHTML=html;
+
+PRODUCTS = data.products;
+
+let html = '';
+
+let options =
+'<option value=\"\">Select Product</option>';
+
+PRODUCTS.forEach(p=>{
+
+html += `
+<div class="card">
+
+<img src="${
+p.image ||
+'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1200&auto=format&fit=crop'
+}">
+
+<div class="card-body">
+
+<h3>${p.name}</h3>
+
+<p>${p.notes || ''}</p>
+
+<div class="price">
+₹${p.price}
+</div>
+
+<button class="order-btn"
+onclick="quickOrder('${p.name}')">
+
+Order Now
+
+</button>
+
+</div>
+</div>
+`;
+
+options += `
+<option value="${p.name}">
+${p.name}
+</option>
+`;
+
+});
+
+document.getElementById('products-container').innerHTML = html;
+
+document.getElementById('product').innerHTML = options;
+
 }
 
-// SELECT
-function select(n,p){
-  go('order');
-  product.value=n;
-  price.value=p;
+/* =========================
+QUICK ORDER
+========================= */
+
+function quickOrder(name){
+
+go('order');
+
+document.getElementById('product').value = name;
+
+selectProduct();
+
 }
 
-// CALC
-function calc(){
-  total.value=qty.value*price.value;
+/* =========================
+SELECT PRODUCT
+========================= */
+
+function selectProduct(){
+
+const product =
+document.getElementById('product').value;
+
+const p =
+PRODUCTS.find(x=>x.name===product);
+
+if(p){
+
+document.getElementById('price').value =
+p.price;
+
+calculate();
+
 }
 
-// ORDER
+}
+
+/* =========================
+CALCULATE
+========================= */
+
+function calculate(){
+
+const qty =
+Number(document.getElementById('qty').value || 1);
+
+const price =
+Number(document.getElementById('price').value || 0);
+
+const total = qty * price;
+
+document.getElementById('amount').value =
+total;
+
+document.getElementById('finalTotal').value =
+total;
+
+}
+
+/* =========================
+COUPON
+========================= */
+
+function applyCoupon(){
+
+const code =
+document.getElementById('coupon').value;
+
+const product =
+document.getElementById('product').value;
+
+const script=document.createElement('script');
+
+script.src =
+BASE_URL +
+'?action=coupon&code=' +
+code +
+'&product=' +
+product +
+'&callback=couponResult';
+
+document.body.appendChild(script);
+
+}
+
+function couponResult(data){
+
+if(data.status === 'success'){
+
+const total =
+Number(document.getElementById('amount').value);
+
+const discount =
+(total * data.discount) / 100;
+
+const finalTotal = total - discount;
+
+document.getElementById('discount').value =
+discount;
+
+document.getElementById('finalTotal').value =
+finalTotal;
+
+alert('Coupon Applied Successfully');
+
+}
+else{
+
+alert('Invalid Coupon');
+
+}
+
+}
+
+/* =========================
+PLACE ORDER
+========================= */
+
 function placeOrder(){
-  const form=new URLSearchParams();
-  form.append("name",name.value);
-  form.append("phone",phone.value);
-  form.append("product",product.value);
-  form.append("qty",qty.value);
-  form.append("price",price.value);
-  form.append("total",total.value);
 
-  fetch(BASE_URL,{method:"POST",body:form})
-  .then(r=>r.json())
-  .then(d=>{
-    const msg=`🛍️ New Order!
-ID:${d.orderId}
-Product:${product.value}
-Qty:${qty.value}
-Total:₹${total.value}`;
+const customerName =
+document.getElementById('name').value;
 
-    window.open("https://wa.me/919894122166?text="+encodeURIComponent(msg));
-    alert("Order Placed! ID: "+d.orderId);
-  });
+const customerPhone =
+document.getElementById('phone').value;
+
+const selectedProduct =
+document.getElementById('product').value;
+
+if(
+!customerName ||
+!customerPhone ||
+!selectedProduct
+){
+alert('Please fill all required fields');
+return;
 }
 
-// TRACK
+const form = new URLSearchParams();
+
+form.append('name', customerName);
+form.append('phone', customerPhone);
+form.append('product', selectedProduct);
+form.append('qty', document.getElementById('qty').value);
+form.append('price', document.getElementById('price').value);
+form.append('total', document.getElementById('amount').value);
+form.append('coupon', document.getElementById('coupon').value);
+form.append('discount', document.getElementById('discount').value);
+form.append('finalTotal', document.getElementById('finalTotal').value);
+form.append('paymentRef', document.getElementById('paymentRef').value);
+
+fetch(BASE_URL,{
+method:'POST',
+body:form
+})
+.then(r=>r.json())
+.then(d=>{
+
+const msg = `
+🛍️ New Order
+
+Order ID: ${d.orderId}
+
+Product:
+${selectedProduct}
+
+Qty:
+${document.getElementById('qty').value}
+
+Final Total:
+₹${document.getElementById('finalTotal').value}
+`;
+
+window.open(
+'https://wa.me/919894122166?text=' +
+encodeURIComponent(msg)
+);
+
+alert(
+'Thank you for your order ❤️\n\nYour Order ID: ' +
+d.orderId
+);
+
+document.getElementById('name').value='';
+document.getElementById('phone').value='';
+document.getElementById('qty').value='1';
+document.getElementById('coupon').value='';
+document.getElementById('discount').value='';
+document.getElementById('paymentRef').value='';
+
+});
+
+}
+
+/* =========================
+TRACK ORDER
+========================= */
+
 function trackOrder(){
-  const script=document.createElement("script");
-  script.src=BASE_URL+"?action=track&orderId="+trackId.value+"&callback=showTrack";
-  document.body.appendChild(script);
+
+const id =
+document.getElementById('trackId').value;
+
+const script=document.createElement('script');
+
+script.src =
+BASE_URL +
+'?action=track&orderId=' +
+id +
+'&callback=showTrack';
+
+document.body.appendChild(script);
+
 }
 
-function showTrack(d){
-  trackResult.innerHTML = d.status==="success"
-  ? "Status: "+d.orderStatus
-  : "Order not found";
+function showTrack(data){
+
+if(data.status === 'success'){
+
+document.getElementById('trackResult').innerHTML =
+'Status: ' + data.orderStatus;
+
 }
+else{
+
+document.getElementById('trackResult').innerHTML =
+'Order Not Found';
+
+}
+
+}
+
+/* =========================
+INIT
+========================= */
 
 loadProducts();
 
