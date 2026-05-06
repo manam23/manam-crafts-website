@@ -6,122 +6,154 @@
 
 <style>
 
-body {
-  margin:0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg,#fff6ec,#fde6d2);
+/* RESET */
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:'Segoe UI',sans-serif;
+  background:linear-gradient(135deg,#fff6ec,#fde6d2);
   color:#333;
+  scroll-behavior:smooth;
 }
 
 /* HEADER */
-header {
+header{
   position:fixed;
   width:100%;
   top:0;
-  backdrop-filter: blur(10px);
-  background: rgba(255,255,255,0.7);
+  background:rgba(255,255,255,0.7);
+  backdrop-filter:blur(12px);
   display:flex;
   justify-content:space-between;
   padding:15px 40px;
   z-index:1000;
 }
 
-nav a {
+nav a{
   margin-left:20px;
   cursor:pointer;
   font-weight:500;
 }
 
 /* SECTION */
-section {
+section{
   min-height:100vh;
   padding:120px 60px;
 }
 
 /* HERO */
-.hero {
+.hero{
+  display:flex;
+  align-items:center;
+  justify-content:center;
   text-align:center;
 }
 
-.logo {
-  width:160px;
+.hero-inner{
+  max-width:700px;
+  animation:fadeUp 1s ease;
+}
+
+.logo{
+  width:150px;
   margin-bottom:20px;
-  animation: float 4s ease-in-out infinite;
+  filter:drop-shadow(0 10px 25px rgba(0,0,0,0.15));
 }
 
-@keyframes float {
-  0% { transform:translateY(0px);}
-  50% { transform:translateY(-10px);}
-  100% { transform:translateY(0px);}
+.hero h1{
+  font-size:54px;
+  line-height:1.2;
 }
 
-.hero h1 {
-  font-size:48px;
-  margin-bottom:10px;
+.highlight{
+  color:#ff7a00;
 }
 
-.hero p {
+.hero p{
+  margin-top:15px;
   font-size:18px;
   opacity:0.7;
 }
 
-/* CATEGORY */
-.categories {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-}
-
-.cat-card {
-  padding:30px;
-  border-radius:20px;
-  background:rgba(255,255,255,0.6);
-  backdrop-filter:blur(10px);
-  text-align:center;
+.hero-buttons button{
+  margin:12px;
+  padding:14px 24px;
+  border:none;
+  border-radius:12px;
+  background:#ff7a00;
+  color:white;
+  cursor:pointer;
   transition:0.3s;
 }
 
-.cat-card:hover {
-  transform:translateY(-5px);
+.hero-buttons button:hover{
+  transform:translateY(-3px);
+}
+
+.outline{
+  background:transparent;
+  border:1px solid #ff7a00;
+  color:#ff7a00;
+}
+
+/* CATEGORY */
+.categories{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+
+.cat-card{
+  padding:40px;
+  border-radius:25px;
+  background:rgba(255,255,255,0.6);
+  backdrop-filter:blur(10px);
+  text-align:center;
+  font-size:20px;
+  transition:0.3s;
+}
+
+.cat-card:hover{
+  transform:translateY(-6px);
 }
 
 /* PRODUCTS */
-.grid {
+.grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
+  gap:25px;
 }
 
-.card {
+.card{
   background:rgba(255,255,255,0.6);
-  backdrop-filter:blur(10px);
+  backdrop-filter:blur(12px);
   border-radius:20px;
   overflow:hidden;
   transition:0.3s;
 }
 
-.card:hover {
-  transform:translateY(-8px);
+.card:hover{
+  transform:translateY(-10px);
 }
 
-.card img {
+.card img{
   width:100%;
-  height:200px;
+  height:220px;
   object-fit:cover;
 }
 
-.card-body {
+.card-body{
   padding:15px;
 }
 
-.price {
+.price{
   color:#ff7a00;
   font-weight:bold;
 }
 
-button {
+button{
   width:100%;
-  padding:10px;
+  padding:12px;
   margin-top:10px;
   border:none;
   background:#ff7a00;
@@ -131,10 +163,18 @@ button {
 }
 
 /* FORM */
-input {
+input{
   width:100%;
-  padding:10px;
+  padding:12px;
   margin:10px 0;
+  border-radius:8px;
+  border:1px solid #ddd;
+}
+
+/* ANIMATION */
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(20px)}
+  to{opacity:1; transform:translateY(0)}
 }
 
 </style>
@@ -155,9 +195,15 @@ input {
 
 <!-- HERO -->
 <section id="home" class="hero">
-  <img src="logo.png" class="logo">
-  <h1>Crafted with Love ❤️</h1>
-  <p>Handmade crochet & pipe cleaner creations</p>
+  <div class="hero-inner">
+    <img src="logo.png" class="logo">
+    <h1>Crafted with <span class="highlight">love</span></h1>
+    <p>Handmade crochet & pipe cleaner creations</p>
+    <div class="hero-buttons">
+      <button onclick="go('products')">Explore Products</button>
+      <button class="outline" onclick="go('order')">Order Now</button>
+    </div>
+  </div>
 </section>
 
 <!-- CATEGORY -->
@@ -182,7 +228,7 @@ input {
   <input id="name" placeholder="Name">
   <input id="phone" placeholder="Phone">
   <input id="product" placeholder="Product">
-  <input id="qty" placeholder="Qty" oninput="calc()">
+  <input id="qty" placeholder="Quantity" oninput="calc()">
   <input id="price" placeholder="Price">
   <input id="total" placeholder="Total">
   <button onclick="placeOrder()">Submit</button>
@@ -191,7 +237,7 @@ input {
 <!-- TRACK -->
 <section id="track">
   <h2>Track Order</h2>
-  <input id="trackId" placeholder="Order ID">
+  <input id="trackId" placeholder="Enter Order ID">
   <button onclick="trackOrder()">Track</button>
   <div id="trackResult"></div>
 </section>
@@ -205,10 +251,10 @@ function go(id){
   document.getElementById(id).scrollIntoView({behavior:'smooth'});
 }
 
-// LOAD PRODUCTS
+// PRODUCTS
 function loadProducts(){
-  const script = document.createElement("script");
-  script.src = BASE_URL + "?action=products&callback=renderProducts";
+  const script=document.createElement("script");
+  script.src=BASE_URL+"?action=products&callback=renderProducts";
   document.body.appendChild(script);
 }
 
@@ -253,12 +299,14 @@ function placeOrder(){
   fetch(BASE_URL,{method:"POST",body:form})
   .then(r=>r.json())
   .then(d=>{
-    const msg=`New Order!
+    const msg=`🛍️ New Order!
 ID:${d.orderId}
-${product.value}`;
+Product:${product.value}
+Qty:${qty.value}
+Total:₹${total.value}`;
 
     window.open("https://wa.me/919894122166?text="+encodeURIComponent(msg));
-    alert("Order ID: "+d.orderId);
+    alert("Order Placed! ID: "+d.orderId);
   });
 }
 
@@ -272,7 +320,7 @@ function trackOrder(){
 function showTrack(d){
   trackResult.innerHTML = d.status==="success"
   ? "Status: "+d.orderStatus
-  : "Not found";
+  : "Order not found";
 }
 
 loadProducts();
